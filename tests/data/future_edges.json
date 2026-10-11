@@ -1,0 +1,1402 @@
+{
+ "schema": "bondportfolio-future-edges/1",
+ "provenance": {
+  "what_it_is": "pureql values of the named edge cases of tests/future/test_future_edges.py at future valuation dates: per case (scenario, valuation date, bond key, flags R/T/F) every contract-4.7 output of the bond (docs/model-contract.md), computed by tests/helpers/pureql_val.py in the Settings-moved engine form and checked bit for bit against the explicit-date form. Raw pureql outcomes ('*_from_z' keep pureql's 'non tradable' raise; the model's NT_ENGINE policy turns it into 0.0).",
+  "generator": "python tests/future/test_future_edges.py",
+  "oracle": "pureql (quantlib-migration src/pureql, a port of QuantLib v1.43)",
+  "quantlib_migration_head": "3cae5679a32b50d833d518aab402c13238dcff30",
+  "frozen_on": "2026-10-11",
+  "input_dir": "tests/future/test_future_edges.py::write_edge_inputs",
+  "input_sha256": {
+   "bonds.csv": "d5ed375a0ac7c5fc8daddc984b81c4e6c886547b76bd57f357b8dfc53275769d",
+   "coupon_rates.csv": "312cb4f867080fca2741446de222c28ce0e1d6fbc64cbe41c6878a72eec2e46b",
+   "curve_nodes.csv": "5ab2413789d73851313355465bd78e0605a0ae75489ef8f5c175fb0a569256f3",
+   "curve_params.csv": "bef270a43586d1560a2f7644d5d276b0411fd71e5de0dc0befd33bfa63e7e46b",
+   "spreads.csv": "7e9c76dabc8e41951b77040ea58e60bddcbb33d6c24d0f9efb2a088536c9b142",
+   "valuation_dates.csv": "7cee7833ff9baf95e38a623e5685e76e0bad8d98c436275cf9cd3edad0aba5c2"
+  },
+  "cases": {
+   "headline coupon in (v,s] 2020-09-11": [
+    1,
+    "2020-09-11",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline coupon on v 2020-09-15": [
+    1,
+    "2020-09-15",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline next business day 2020-09-16": [
+    1,
+    "2020-09-16",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline spread coupon in (v,s] 2020-09-11": [
+    2,
+    "2020-09-11",
+    "HEADLINE_SPRD",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "T-override s==v, T None": [
+    1,
+    "2020-09-15",
+    "T0_CPN_ON_V",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "T-override s==v, T True": [
+    1,
+    "2020-09-15",
+    "T0_CPN_ON_V",
+    [
+     0,
+     1,
+     -1
+    ]
+   ],
+   "T-override s==v, R True": [
+    1,
+    "2020-09-15",
+    "T0_CPN_ON_V",
+    [
+     1,
+     -1,
+     -1
+    ]
+   ],
+   "T-override s==v, R True T False": [
+    1,
+    "2020-09-15",
+    "T0_CPN_ON_V",
+    [
+     1,
+     0,
+     -1
+    ]
+   ],
+   "T-override s==v, F True": [
+    1,
+    "2020-09-15",
+    "T0_CPN_ON_V",
+    [
+     0,
+     -1,
+     1
+    ]
+   ],
+   "xmas coupon paid on s 2020-12-24": [
+    1,
+    "2020-12-24",
+    "TARGET_T1_XMAS",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "xmas coupon paid on v 2020-12-28": [
+    1,
+    "2020-12-28",
+    "TARGET_T1_XMAS",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "zcb maturity in (v,s] 2020-12-31": [
+    1,
+    "2020-12-31",
+    "ZCB_TARGET_T2",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "zcb matures on v 2021-01-04": [
+    1,
+    "2021-01-04",
+    "ZCB_TARGET_T2",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "us thanksgiving zcb maturity in (v,s] 2021-11-25": [
+    2,
+    "2021-11-25",
+    "USSET_ZCB_T2_SPRD",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "us jul-4 coupon in (v,s] 2021-07-02": [
+    2,
+    "2021-07-02",
+    "USGOV_T3_JUL4",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "us observed holiday 2021-07-05": [
+    2,
+    "2021-07-05",
+    "USGOV_T3_JUL4",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline maturity in (v,s] 2025-09-11": [
+    1,
+    "2025-09-11",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline matures on v 2025-09-15": [
+    1,
+    "2025-09-15",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "headline after maturity 2025-09-16": [
+    1,
+    "2025-09-16",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "forward start 2020-09-16": [
+    1,
+    "2020-09-16",
+    "FWD_START",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "T+0 day before issue 2015-09-14": [
+    1,
+    "2015-09-14",
+    "T0_CPN_ON_V",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "null zcb matures on a holiday v 2020-12-25": [
+    1,
+    "2020-12-25",
+    "ZCB_NULL_T0",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "T+0 on a holiday 2020-12-25": [
+    1,
+    "2020-12-25",
+    "T0_CPN_ON_V",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "extrapolate 0 past max time": [
+    3,
+    "2020-09-16",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "extrapolate 1": [
+    4,
+    "2020-09-16",
+    "HEADLINE",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ],
+   "30/360 SimpleThenCompounded spread": [
+    5,
+    "2020-09-11",
+    "HEADLINE_SPRD",
+    [
+     0,
+     -1,
+     -1
+    ]
+   ]
+  },
+  "flags_order": [
+   "include_reference_date_events",
+   "include_todays_cashflows",
+   "engine_include_settlement_flows"
+  ],
+  "z_grid": [
+   -0.0125,
+   0.0,
+   0.01
+  ],
+  "role_codes": {
+   "0": "ROLE_ENGINE",
+   "1": "ROLE_SETTLE",
+   "2": "ROLE_EXPIRY"
+  },
+  "tier": "exact (bitwise; DECISIONS.md D-2)",
+  "licence": "data computed with pureql (BSD-3-Clause, derived from QuantLib); see NOTICE.md"
+ },
+ "values": {
+  "headline coupon in (v,s] 2020-09-11": {
+   "bond": {
+    "settle": 44090,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.011111111111117289,
+    "accrued_cash": 0.011111111111117289,
+    "npv": 104.08558027162044,
+    "settlement_value": 102.13530449214969,
+    "dirty_price": 102.13530449214969,
+    "clean_price": 102.12419338103857,
+    "market_value": 104.08558027162044,
+    "npv_base": 104.08558027162044
+   },
+   "role": {
+    "first_live[0]": 9,
+    "first_live[1]": 10,
+    "first_live[2]": 9,
+    "pv_base[0]": 104.08558027162044,
+    "pv_base[1]": 102.13530449214969
+   },
+   "z": {
+    "pv_z[-0.0125]": 107.99356927837103,
+    "dirty_from_z[-0.0125]": 107.99356927837103,
+    "clean_from_z[-0.0125]": 107.9824581672599,
+    "pv_z[0.0]": 102.13530449214967,
+    "dirty_from_z[0.0]": 102.13530449214969,
+    "clean_from_z[0.0]": 102.12419338103857,
+    "pv_z[0.01]": 97.73730642842196,
+    "dirty_from_z[0.01]": 97.73730642842196,
+    "clean_from_z[0.01]": 97.72619531731084
+   }
+  },
+  "headline coupon on v 2020-09-15": {
+   "bond": {
+    "settle": 44092,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.03333333333332966,
+    "accrued_cash": 0.03333333333332966,
+    "npv": 102.12551116537907,
+    "settlement_value": 102.15489396317437,
+    "dirty_price": 102.15489396317439,
+    "clean_price": 102.12156062984106,
+    "market_value": 102.12551116537907,
+    "npv_base": 102.12551116537907
+   },
+   "role": {
+    "first_live[0]": 10,
+    "first_live[1]": 10,
+    "first_live[2]": 10,
+    "pv_base[0]": 102.12551116537907,
+    "pv_base[1]": 102.15489396317437
+   },
+   "z": {
+    "pv_z[-0.0125]": 108.00709535686343,
+    "dirty_from_z[-0.0125]": 108.00709535686343,
+    "clean_from_z[-0.0125]": 107.9737620235301,
+    "pv_z[0.0]": 102.15489396317437,
+    "dirty_from_z[0.0]": 102.15489396317439,
+    "clean_from_z[0.0]": 102.12156062984106,
+    "pv_z[0.01]": 97.76119995175152,
+    "dirty_from_z[0.01]": 97.76119995175151,
+    "clean_from_z[0.01]": 97.72786661841818
+   }
+  },
+  "headline next business day 2020-09-16": {
+   "bond": {
+    "settle": 44095,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.06666666666665932,
+    "accrued_cash": 0.06666666666665932,
+    "npv": 102.13530449214969,
+    "settlement_value": 102.18428521477128,
+    "dirty_price": 102.18428521477128,
+    "clean_price": 102.11761854810462,
+    "market_value": 102.13530449214969,
+    "npv_base": 102.13530449214969
+   },
+   "role": {
+    "first_live[0]": 10,
+    "first_live[1]": 10,
+    "first_live[2]": 10,
+    "pv_base[0]": 102.13530449214969,
+    "pv_base[1]": 102.18428521477128
+   },
+   "z": {
+    "pv_z[-0.0125]": 108.02738765115612,
+    "dirty_from_z[-0.0125]": 108.02738765115612,
+    "clean_from_z[-0.0125]": 107.96072098448946,
+    "pv_z[0.0]": 102.18428521477125,
+    "dirty_from_z[0.0]": 102.18428521477125,
+    "clean_from_z[0.0]": 102.11761854810459,
+    "pv_z[0.01]": 97.79705118939037,
+    "dirty_from_z[0.01]": 97.79705118939037,
+    "clean_from_z[0.01]": 97.73038452272371
+   }
+  },
+  "headline spread coupon in (v,s] 2020-09-11": {
+   "bond": {
+    "settle": 44090,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": true,
+    "spread": 0.0104,
+    "accrued_amount": 0.011111111111117289,
+    "accrued_cash": 0.011111111111117289,
+    "npv": 104.35449943120688,
+    "settlement_value": 102.38365106535667,
+    "dirty_price": 102.38365106535667,
+    "clean_price": 102.37253995424555,
+    "market_value": 104.35449943120688,
+    "npv_base": 109.37363241485252
+   },
+   "role": {
+    "first_live[0]": 30,
+    "first_live[1]": 31,
+    "first_live[2]": 30,
+    "pv_base[0]": 109.37363241485252,
+    "pv_base[1]": 107.3886632949111,
+    "pv_sprd[0]": 104.35449943120688,
+    "pv_sprd[1]": 102.38365106535667,
+    "zdisc_npv[0]": 1.0,
+    "zdisc_npv[1]": 0.9997196489885585
+   },
+   "z": {
+    "pv_z[-0.0125]": 113.7475185987428,
+    "dirty_from_z[-0.0125]": 113.74751859874281,
+    "clean_from_z[-0.0125]": 113.7364074876317,
+    "pv_z[0.0]": 107.3886632949111,
+    "dirty_from_z[0.0]": 107.3886632949111,
+    "clean_from_z[0.0]": 107.37755218379998,
+    "pv_z[0.01]": 102.57153012311706,
+    "dirty_from_z[0.01]": 102.57153012311706,
+    "clean_from_z[0.01]": 102.56041901200594
+   }
+  },
+  "T-override s==v, T None": {
+   "bond": {
+    "settle": 44089,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 104.39899345167926,
+    "settlement_value": 104.39899345167926,
+    "dirty_price": 104.39899345167925,
+    "clean_price": 104.39899345167925,
+    "market_value": 104.39899345167926,
+    "npv_base": 104.39899345167926
+   },
+   "role": {
+    "first_live[0]": 52,
+    "first_live[1]": 52,
+    "first_live[2]": 52,
+    "pv_base[0]": 104.39899345167926,
+    "pv_base[1]": 104.39899345167926
+   },
+   "z": {
+    "pv_z[-0.0125]": 110.33578168974472,
+    "dirty_from_z[-0.0125]": 110.33578168974472,
+    "clean_from_z[-0.0125]": 110.33578168974472,
+    "pv_z[0.0]": 104.39899345167926,
+    "dirty_from_z[0.0]": 104.39899345167925,
+    "clean_from_z[0.0]": 104.39899345167925,
+    "pv_z[0.01]": 99.94130537756861,
+    "dirty_from_z[0.01]": 99.94130537756861,
+    "clean_from_z[0.01]": 99.94130537756861
+   }
+  },
+  "T-override s==v, T True": {
+   "bond": {
+    "settle": 44089,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 2.2499999999999964,
+    "accrued_cash": 2.2499999999999964,
+    "npv": 106.64899345167926,
+    "settlement_value": 106.64899345167926,
+    "dirty_price": 106.64899345167925,
+    "clean_price": 104.39899345167925,
+    "market_value": 106.64899345167926,
+    "npv_base": 106.64899345167926
+   },
+   "role": {
+    "first_live[0]": 51,
+    "first_live[1]": 51,
+    "first_live[2]": 51,
+    "pv_base[0]": 106.64899345167926,
+    "pv_base[1]": 106.64899345167926
+   },
+   "z": {
+    "pv_z[-0.0125]": 112.58578168974472,
+    "dirty_from_z[-0.0125]": 112.58578168974472,
+    "clean_from_z[-0.0125]": 110.33578168974472,
+    "pv_z[0.0]": 106.64899345167926,
+    "dirty_from_z[0.0]": 106.64899345167925,
+    "clean_from_z[0.0]": 104.39899345167925,
+    "pv_z[0.01]": 102.1913053775686,
+    "dirty_from_z[0.01]": 102.19130537756861,
+    "clean_from_z[0.01]": 99.94130537756861
+   }
+  },
+  "T-override s==v, R True": {
+   "bond": {
+    "settle": 44089,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 106.64899345167926,
+    "settlement_value": 104.39899345167926,
+    "dirty_price": 104.39899345167925,
+    "clean_price": 104.39899345167925,
+    "market_value": 106.64899345167926,
+    "npv_base": 106.64899345167926
+   },
+   "role": {
+    "first_live[0]": 51,
+    "first_live[1]": 52,
+    "first_live[2]": 51,
+    "pv_base[0]": 106.64899345167926,
+    "pv_base[1]": 104.39899345167926
+   },
+   "z": {
+    "pv_z[-0.0125]": 110.33578168974472,
+    "dirty_from_z[-0.0125]": 110.33578168974472,
+    "clean_from_z[-0.0125]": 110.33578168974472,
+    "pv_z[0.0]": 104.39899345167926,
+    "dirty_from_z[0.0]": 104.39899345167925,
+    "clean_from_z[0.0]": 104.39899345167925,
+    "pv_z[0.01]": 99.94130537756861,
+    "dirty_from_z[0.01]": 99.94130537756861,
+    "clean_from_z[0.01]": 99.94130537756861
+   }
+  },
+  "T-override s==v, R True T False": {
+   "bond": {
+    "settle": 44089,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 104.39899345167926,
+    "settlement_value": 104.39899345167926,
+    "dirty_price": 104.39899345167925,
+    "clean_price": 104.39899345167925,
+    "market_value": 104.39899345167926,
+    "npv_base": 104.39899345167926
+   },
+   "role": {
+    "first_live[0]": 52,
+    "first_live[1]": 52,
+    "first_live[2]": 52,
+    "pv_base[0]": 104.39899345167926,
+    "pv_base[1]": 104.39899345167926
+   },
+   "z": {
+    "pv_z[-0.0125]": 110.33578168974472,
+    "dirty_from_z[-0.0125]": 110.33578168974472,
+    "clean_from_z[-0.0125]": 110.33578168974472,
+    "pv_z[0.0]": 104.39899345167926,
+    "dirty_from_z[0.0]": 104.39899345167925,
+    "clean_from_z[0.0]": 104.39899345167925,
+    "pv_z[0.01]": 99.94130537756861,
+    "dirty_from_z[0.01]": 99.94130537756861,
+    "clean_from_z[0.01]": 99.94130537756861
+   }
+  },
+  "T-override s==v, F True": {
+   "bond": {
+    "settle": 44089,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 106.64899345167926,
+    "settlement_value": 104.39899345167926,
+    "dirty_price": 104.39899345167925,
+    "clean_price": 104.39899345167925,
+    "market_value": 106.64899345167926,
+    "npv_base": 106.64899345167926
+   },
+   "role": {
+    "first_live[0]": 51,
+    "first_live[1]": 52,
+    "first_live[2]": 52,
+    "pv_base[0]": 106.64899345167926,
+    "pv_base[1]": 104.39899345167926
+   },
+   "z": {
+    "pv_z[-0.0125]": 110.33578168974472,
+    "dirty_from_z[-0.0125]": 110.33578168974472,
+    "clean_from_z[-0.0125]": 110.33578168974472,
+    "pv_z[0.0]": 104.39899345167926,
+    "dirty_from_z[0.0]": 104.39899345167925,
+    "clean_from_z[0.0]": 104.39899345167925,
+    "pv_z[0.01]": 99.94130537756861,
+    "dirty_from_z[0.01]": 99.94130537756861,
+    "clean_from_z[0.01]": 99.94130537756861
+   }
+  },
+  "xmas coupon paid on s 2020-12-24": {
+   "bond": {
+    "settle": 44193,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 99.63841958701917,
+    "settlement_value": 97.12803328223018,
+    "dirty_price": 97.12803328223018,
+    "clean_price": 97.12803328223018,
+    "market_value": 99.63841958701917,
+    "npv_base": 99.63841958701917
+   },
+   "role": {
+    "first_live[0]": 87,
+    "first_live[1]": 88,
+    "first_live[2]": 87,
+    "pv_base[0]": 99.63841958701917,
+    "pv_base[1]": 97.12803328223018
+   },
+   "z": {
+    "pv_z[-0.0125]": 100.63801929844502,
+    "dirty_from_z[-0.0125]": 100.63801929844502,
+    "clean_from_z[-0.0125]": 100.63801929844502,
+    "pv_z[0.0]": 97.12803328223018,
+    "dirty_from_z[0.0]": 97.12803328223018,
+    "clean_from_z[0.0]": 97.12803328223018,
+    "pv_z[0.01]": 94.4385719742645,
+    "dirty_from_z[0.01]": 94.4385719742645,
+    "clean_from_z[0.01]": 94.4385719742645
+   }
+  },
+  "xmas coupon paid on v 2020-12-28": {
+   "bond": {
+    "settle": 44194,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.00694444444444553,
+    "accrued_cash": 0.00694444444444553,
+    "npv": 97.1280332822302,
+    "settlement_value": 97.13734737581628,
+    "dirty_price": 97.13734737581628,
+    "clean_price": 97.13040293137183,
+    "market_value": 97.1280332822302,
+    "npv_base": 97.1280332822302
+   },
+   "role": {
+    "first_live[0]": 88,
+    "first_live[1]": 88,
+    "first_live[2]": 88,
+    "pv_base[0]": 97.1280332822302,
+    "pv_base[1]": 97.13734737581628
+   },
+   "z": {
+    "pv_z[-0.0125]": 100.6443215029963,
+    "dirty_from_z[-0.0125]": 100.6443215029963,
+    "clean_from_z[-0.0125]": 100.63737705855186,
+    "pv_z[0.0]": 97.13734737581626,
+    "dirty_from_z[0.0]": 97.13734737581626,
+    "clean_from_z[0.0]": 97.13040293137182,
+    "pv_z[0.01]": 94.45011481503836,
+    "dirty_from_z[0.01]": 94.45011481503836,
+    "clean_from_z[0.01]": 94.44317037059392
+   }
+  },
+  "zcb maturity in (v,s] 2020-12-31": {
+   "bond": {
+    "settle": 44201,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 99.96165119065277,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 99.96165119065277,
+    "npv_base": 99.96165119065277
+   },
+   "role": {
+    "first_live[0]": 144,
+    "first_live[1]": 145,
+    "first_live[2]": 144,
+    "pv_base[0]": 99.96165119065277,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at January 5th, 2021 (maturity being January 4th, 2021)"
+    }
+   }
+  },
+  "zcb matures on v 2021-01-04": {
+   "bond": {
+    "settle": 44202,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": true,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 0.0,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 0.0,
+    "npv_base": 0.0
+   },
+   "role": {
+    "first_live[0]": 145,
+    "first_live[1]": 145,
+    "first_live[2]": 145,
+    "pv_base[0]": 0.0,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at January 6th, 2021 (maturity being January 4th, 2021)"
+    }
+   }
+  },
+  "us thanksgiving zcb maturity in (v,s] 2021-11-25": {
+   "bond": {
+    "settle": 44529,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": false,
+    "has_spread": true,
+    "spread": 0.0134,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 99.99358549378479,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 99.99358549378479,
+    "npv_base": 99.99725655855629
+   },
+   "role": {
+    "first_live[0]": 131,
+    "first_live[1]": 132,
+    "first_live[2]": 131,
+    "pv_base[0]": 99.99725655855629,
+    "pv_base[1]": 0.0,
+    "pv_sprd[0]": 99.99358549378479,
+    "pv_sprd[1]": 0.0,
+    "zdisc_npv[0]": 1.0,
+    "zdisc_npv[1]": 0.9997429941875927
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at November 29th, 2021 (maturity being November 25th, 2021)"
+    }
+   }
+  },
+  "us jul-4 coupon in (v,s] 2021-07-02": {
+   "bond": {
+    "settle": 44385,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.016438356164383272,
+    "accrued_cash": 0.016438356164383272,
+    "npv": 103.79647027901932,
+    "settlement_value": 102.30948123996264,
+    "dirty_price": 102.30948123996264,
+    "clean_price": 102.29304288379825,
+    "market_value": 103.79647027901932,
+    "npv_base": 103.79647027901932
+   },
+   "role": {
+    "first_live[0]": 123,
+    "first_live[1]": 124,
+    "first_live[2]": 123,
+    "pv_base[0]": 103.79647027901932,
+    "pv_base[1]": 102.30948123996264
+   },
+   "z": {
+    "pv_z[-0.0125]": 106.07010183480297,
+    "dirty_from_z[-0.0125]": 106.07010183480297,
+    "clean_from_z[-0.0125]": 106.05366347863858,
+    "pv_z[0.0]": 102.30948123996262,
+    "dirty_from_z[0.0]": 102.30948123996262,
+    "clean_from_z[0.0]": 102.29304288379824,
+    "pv_z[0.01]": 99.39929982558117,
+    "dirty_from_z[0.01]": 99.39929982558117,
+    "clean_from_z[0.01]": 99.38286146941678
+   }
+  },
+  "us observed holiday 2021-07-05": {
+   "bond": {
+    "settle": 44385,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.016438356164383272,
+    "accrued_cash": 0.016438356164383272,
+    "npv": 103.81777688538229,
+    "settlement_value": 102.32215281401734,
+    "dirty_price": 102.32215281401733,
+    "clean_price": 102.30571445785294,
+    "market_value": 103.81777688538229,
+    "npv_base": 103.81777688538229
+   },
+   "role": {
+    "first_live[0]": 123,
+    "first_live[1]": 124,
+    "first_live[2]": 123,
+    "pv_base[0]": 103.81777688538229,
+    "pv_base[1]": 102.32215281401734
+   },
+   "z": {
+    "pv_z[-0.0125]": 106.08324560786545,
+    "dirty_from_z[-0.0125]": 106.08324560786545,
+    "clean_from_z[-0.0125]": 106.06680725170106,
+    "pv_z[0.0]": 102.32215281401734,
+    "dirty_from_z[0.0]": 102.32215281401733,
+    "clean_from_z[0.0]": 102.30571445785294,
+    "pv_z[0.01]": 99.41160602476295,
+    "dirty_from_z[0.01]": 99.41160602476295,
+    "clean_from_z[0.01]": 99.39516766859856
+   }
+  },
+  "headline maturity in (v,s] 2025-09-11": {
+   "bond": {
+    "settle": 45916,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 101.96088421446584,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 101.96088421446584,
+    "npv_base": 101.96088421446584
+   },
+   "role": {
+    "first_live[0]": 19,
+    "first_live[1]": 21,
+    "first_live[2]": 19,
+    "pv_base[0]": 101.96088421446584,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 16th, 2025 (maturity being September 15th, 2025)"
+    }
+   }
+  },
+  "headline matures on v 2025-09-15": {
+   "bond": {
+    "settle": 45918,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": true,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 0.0,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 0.0,
+    "npv_base": 0.0
+   },
+   "role": {
+    "first_live[0]": 21,
+    "first_live[1]": 21,
+    "first_live[2]": 21,
+    "pv_base[0]": 0.0,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 18th, 2025 (maturity being September 15th, 2025)"
+    }
+   }
+  },
+  "headline after maturity 2025-09-16": {
+   "bond": {
+    "settle": 45919,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": true,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 0.0,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 0.0,
+    "npv_base": 0.0
+   },
+   "role": {
+    "first_live[0]": 21,
+    "first_live[1]": 21,
+    "first_live[2]": 21,
+    "pv_base[0]": 0.0,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at September 19th, 2025 (maturity being September 15th, 2025)"
+    }
+   }
+  },
+  "forward start 2020-09-16": {
+   "bond": {
+    "settle": 44362,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 91.74317368925364,
+    "settlement_value": 94.16751537791171,
+    "dirty_price": 94.16751537791171,
+    "clean_price": 94.16751537791171,
+    "market_value": 91.74317368925364,
+    "npv_base": 91.74317368925364
+   },
+   "role": {
+    "first_live[0]": 132,
+    "first_live[1]": 132,
+    "first_live[2]": 132,
+    "pv_base[0]": 91.74317368925364,
+    "pv_base[1]": 94.16751537791171
+   },
+   "z": {
+    "pv_z[-0.0125]": 99.76485633257958,
+    "dirty_from_z[-0.0125]": 99.76485633257958,
+    "clean_from_z[-0.0125]": 99.76485633257958,
+    "pv_z[0.0]": 94.16751537791168,
+    "dirty_from_z[0.0]": 94.16751537791168,
+    "clean_from_z[0.0]": 94.16751537791168,
+    "pv_z[0.01]": 89.96854684201892,
+    "dirty_from_z[0.01]": 89.96854684201894,
+    "clean_from_z[0.01]": 89.96854684201894
+   }
+  },
+  "T+0 day before issue 2015-09-14": {
+   "bond": {
+    "settle": 42262,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 108.07085167404033,
+    "settlement_value": 108.08121512929009,
+    "dirty_price": 108.08121512929009,
+    "clean_price": 108.08121512929009,
+    "market_value": 108.07085167404033,
+    "npv_base": 108.07085167404033
+   },
+   "role": {
+    "first_live[0]": 42,
+    "first_live[1]": 42,
+    "first_live[2]": 42,
+    "pv_base[0]": 108.07085167404033,
+    "pv_base[1]": 108.08121512929009
+   },
+   "z": {
+    "pv_z[-0.0125]": 119.54741933418029,
+    "dirty_from_z[-0.0125]": 119.54741933418029,
+    "clean_from_z[-0.0125]": 119.54741933418029,
+    "pv_z[0.0]": 108.08121512929007,
+    "dirty_from_z[0.0]": 108.08121512929007,
+    "clean_from_z[0.0]": 108.08121512929007,
+    "pv_z[0.01]": 99.88235194478202,
+    "dirty_from_z[0.01]": 99.88235194478202,
+    "clean_from_z[0.01]": 99.88235194478202
+   }
+  },
+  "null zcb matures on a holiday v 2020-12-25": {
+   "bond": {
+    "settle": 44190,
+    "notional_s": 0.0,
+    "is_tradable": false,
+    "is_expired": true,
+    "has_spread": false,
+    "accrued_amount": 0.0,
+    "accrued_cash": 0.0,
+    "npv": 0.0,
+    "settlement_value": 0.0,
+    "dirty_price": 0.0,
+    "clean_price": 0.0,
+    "market_value": 0.0,
+    "npv_base": 0.0
+   },
+   "role": {
+    "first_live[0]": 144,
+    "first_live[1]": 144,
+    "first_live[2]": 144,
+    "pv_base[0]": 0.0,
+    "pv_base[1]": 0.0
+   },
+   "z": {
+    "pv_z[-0.0125]": 0.0,
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    },
+    "pv_z[0.0]": 0.0,
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    },
+    "pv_z[0.01]": 0.0,
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "non tradable at December 25th, 2020 (maturity being December 25th, 2020)"
+    }
+   }
+  },
+  "T+0 on a holiday 2020-12-25": {
+   "bond": {
+    "settle": 44193,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 1.287499999999997,
+    "accrued_cash": 1.287499999999997,
+    "npv": 105.41500260053681,
+    "settlement_value": 105.44533182651236,
+    "dirty_price": 105.44533182651236,
+    "clean_price": 104.15783182651236,
+    "market_value": 105.41500260053681,
+    "npv_base": 105.41500260053681
+   },
+   "role": {
+    "first_live[0]": 52,
+    "first_live[1]": 52,
+    "first_live[2]": 52,
+    "pv_base[0]": 105.41500260053681,
+    "pv_base[1]": 105.44533182651236
+   },
+   "z": {
+    "pv_z[-0.0125]": 111.05669240161524,
+    "dirty_from_z[-0.0125]": 111.05669240161524,
+    "clean_from_z[-0.0125]": 109.76919240161524,
+    "pv_z[0.0]": 105.44533182651236,
+    "dirty_from_z[0.0]": 105.44533182651236,
+    "clean_from_z[0.0]": 104.15783182651236,
+    "pv_z[0.01]": 101.21973884635122,
+    "dirty_from_z[0.01]": 101.2197388463512,
+    "clean_from_z[0.01]": 99.93223884635121
+   }
+  },
+  "extrapolate 0 past max time": {
+   "bond": {
+    "settle": 44095,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.06666666666665932,
+    "accrued_cash": 0.06666666666665932,
+    "npv": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "settlement_value": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "dirty_price": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "clean_price": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "market_value": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "npv_base": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    }
+   },
+   "role": {
+    "first_live[0]": 10,
+    "first_live[1]": 10,
+    "first_live[2]": 10,
+    "pv_base[0]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "pv_base[1]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    }
+   },
+   "z": {
+    "pv_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "dirty_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "clean_from_z[-0.0125]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "pv_z[0.0]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "dirty_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "clean_from_z[0.0]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "pv_z[0.01]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "dirty_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    },
+    "clean_from_z[0.01]": {
+     "error": "ValueError",
+     "message": "time (2.49315) is past max curve time (2)"
+    }
+   }
+  },
+  "extrapolate 1": {
+   "bond": {
+    "settle": 44095,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": false,
+    "accrued_amount": 0.06666666666665932,
+    "accrued_cash": 0.06666666666665932,
+    "npv": 109.99008356202489,
+    "settlement_value": 110.00515923080302,
+    "dirty_price": 110.00515923080302,
+    "clean_price": 109.93849256413635,
+    "market_value": 109.99008356202489,
+    "npv_base": 109.99008356202489
+   },
+   "role": {
+    "first_live[0]": 10,
+    "first_live[1]": 10,
+    "first_live[2]": 10,
+    "pv_base[0]": 109.99008356202489,
+    "pv_base[1]": 110.00515923080302
+   },
+   "z": {
+    "pv_z[-0.0125]": 116.09571595316037,
+    "dirty_from_z[-0.0125]": 116.09571595316037,
+    "clean_from_z[-0.0125]": 116.0290492864937,
+    "pv_z[0.0]": 110.005159230803,
+    "dirty_from_z[0.0]": 110.005159230803,
+    "clean_from_z[0.0]": 109.93849256413634,
+    "pv_z[0.01]": 105.59544944393492,
+    "dirty_from_z[0.01]": 105.59544944393492,
+    "clean_from_z[0.01]": 105.52878277726826
+   }
+  },
+  "30/360 SimpleThenCompounded spread": {
+   "bond": {
+    "settle": 44090,
+    "notional_s": 100.0,
+    "is_tradable": true,
+    "is_expired": false,
+    "has_spread": true,
+    "spread": 0.0104,
+    "accrued_amount": 0.011111111111117289,
+    "accrued_cash": 0.011111111111117289,
+    "npv": 106.49751895799152,
+    "settlement_value": 104.52471412266861,
+    "dirty_price": 104.52471412266861,
+    "clean_price": 104.51360301155749,
+    "market_value": 106.49751895799152,
+    "npv_base": 111.5929653563081
+   },
+   "role": {
+    "first_live[0]": 30,
+    "first_live[1]": 31,
+    "first_live[2]": 30,
+    "pv_base[0]": 111.5929653563081,
+    "pv_base[1]": 109.6054053854278,
+    "pv_sprd[0]": 106.49751895799152,
+    "pv_sprd[1]": 104.52471412266861,
+    "zdisc_npv[0]": 1.0,
+    "zdisc_npv[1]": 0.9997437412175914
+   },
+   "z": {
+    "pv_z[-0.0125]": 116.07710200313474,
+    "dirty_from_z[-0.0125]": 116.07710200313473,
+    "clean_from_z[-0.0125]": 116.0659908920236,
+    "pv_z[0.0]": 109.605405385428,
+    "dirty_from_z[0.0]": 109.605405385428,
+    "clean_from_z[0.0]": 109.59429427431688,
+    "pv_z[0.01]": 104.71522661607405,
+    "dirty_from_z[0.01]": 104.71522661607405,
+    "clean_from_z[0.01]": 104.70411550496293
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+bond_key,bond_type,face_amount,settlement_days,calendar,issue_date,redemption,spread_id,effective_date,termination_date,tenor,convention,termination_convention,rule,end_of_month,first_date,next_to_last_date,coupon_rate,accrual_day_counter,first_period_day_counter,payment_convention,payment_calendar,maturity_date,yield_day_counter,yield_compounding,yield_frequency
+HEADLINE_10Y,FixedRate,100,3,TARGET,2015-09-15,100,,2015-09-15,2025-09-15,6M,Unadjusted,Unadjusted,Backward,0,,,0.04,Thirty360.BondBasis,,Following,,,,,
+ZCB_2008,ZeroCoupon,1000000,1,UnitedStates.GovernmentBond,2004-11-30,100,,,,,,,,,,,,,,ModifiedFollowing,,2008-11-30,,,
+ZCB_2007,ZeroCoupon,1000000,1,UnitedStates.GovernmentBond,2004-11-30,100,,,,,,,,,,,,,,ModifiedFollowing,,2007-11-30,,,
+ZCB_2006,ZeroCoupon,1000000,1,UnitedStates.GovernmentBond,2004-11-30,100,,,,,,,,,,,,,,ModifiedFollowing,,2006-11-30,,,
+ZCB_10Y,ZeroCoupon,100,3,TARGET,2015-09-16,100,,,,,,,,,,,,,,Following,,2025-09-16,Actual365Fixed,Compounded,Annual
+USD_Q_ACT360,FixedRate,1000,2,UnitedStates.Settlement,2014-03-20,,IG,2014-03-20,2021-03-20,3M,ModifiedFollowing,ModifiedFollowing,,,,,0.025,Actual360,,ModifiedFollowing,,,,,
+NULL_A365F_LONGFIRST,FixedRate,100,0,NullCalendar,2014-12-01,,HY,2014-12-01,2022-06-30,1Y,Unadjusted,,,,2016-06-30,,0.03,Actual365Fixed,,Unadjusted,,,,,
+USGOV_30360USA_EOM,FixedRate,100,1,UnitedStates.GovernmentBond,2013-02-28,,,2013-02-28,2023-02-28,6M,ModifiedFollowing,Unadjusted,,1,,,0.0275,Thirty360.USA,,Following,,,,,
+EUR_30360EU_LONGLAST,FixedRate,100,2,TARGET,2015-05-20,100,IG,2015-05-20,2025-11-20,1Y,Following,,,,,2024-05-20,0.015,Thirty360.European,,Following,,,,,
+EUR_ISMA_STEPUP_FWD,FixedRate,100,2,TARGET,2016-06-15,,HY,2016-06-15,2026-06-15,1Y,ModifiedFollowing,,,,,,,Thirty360.ISMA,,ModifiedFollowing,,,Actual365Fixed,Compounded,Annual
+US_ONE_PERIOD_0D,FixedRate,100,2,UnitedStates.Settlement,2015-06-01,,,2015-06-01,2016-06-01,0D,Following,,,,,,0.012,Actual360,,ModifiedFollowing,,,,,
+EUROBOND_Q_EOM_USPAY,FixedRate,100,3,TARGET,2015-08-31,,IG,2015-08-31,2020-08-31,3M,Following,,,1,,,0.02,Thirty360.EurobondBasis,Actual360,Following,UnitedStates.Settlement,,,,
+US_1M_A365F_SIMPLEYLD,FixedRate,100,0,UnitedStates.Settlement,2015-07-15,,,2015-07-15,2017-07-15,1M,Nearest,,,,,,0.01,Actual365Fixed,,Preceding,,,,Simple,

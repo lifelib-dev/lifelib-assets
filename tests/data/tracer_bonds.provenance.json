@@ -1,0 +1,11 @@
+{
+  "file": "tracer_bonds.json",
+  "copied_from": "quantlib-migration/tests/data/tracer_bonds.json",
+  "copied_unchanged": true,
+  "sha256": "dbe665bd5a7c264054654575475934a1044053cf68c1916710b8e713f90a33fe",
+  "quantlib_migration_head": "3cae5679a32b50d833d518aab402c13238dcff30",
+  "quantlib_migration_last_commit_of_file": "6374f4c8035f13818478af1f5b3df57e16ae176e",
+  "copied_on": "2026-10-11",
+  "what_it_is": "QuantLib 1.41 goldens (SWIG oracle) frozen by quantlib-migration tools/oracle/dump_bonds.py at evaluation date 2015-09-16; see its own 'provenance' block. Read by tests/cashflows/test_goldens.py at the tiers each key records (exact / value = T2 relative 1e-12 with absolute floor 1e-14 / solver = absolute 1e-11).",
+  "licence": "data produced with QuantLib 1.41 (BSD-3-Clause); see NOTICE.md"
+}

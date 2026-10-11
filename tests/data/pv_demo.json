@@ -1,0 +1,4436 @@
+{
+ "schema": "bondportfolio-pv-golden/1",
+ "provenance": {
+  "what_it_is": "pureql values of every bond of the demo input set at every (scen_id, t): the contract-4.7 outputs (docs/model-contract.md), computed by tests/helpers/pureql_val.py in the Settings-moved engine form and checked bit for bit against the explicit-date form. Raw pureql outcomes: '*_from_z' keep pureql's 'non tradable' raise (the model's NT_ENGINE policy turns it into 0.0).",
+  "generator": "tests/helpers/pureql_val.py::write_golden",
+  "oracle": "pureql (quantlib-migration src/pureql, a port of QuantLib v1.43)",
+  "quantlib_migration_head": "3cae5679a32b50d833d518aab402c13238dcff30",
+  "frozen_on": "2026-10-11",
+  "input_dir": "demo",
+  "input_sha256": {
+   "bonds.csv": "d2911edcf00d0293a9238641219dec241651eb78819f7fef37c79c15bf534a38",
+   "coupon_rates.csv": "75f6653f2ee7ed9e837d8fd55f238d5bb9993d37cc6f062da8df445c6ca03f7b",
+   "curve_nodes.csv": "525fb7b21af2b8c51336b2e692f48251c253d37245722851b7f8ad07d5ab369b",
+   "curve_params.csv": "fd04deacd6b7685ddc483854e5c9307e9e404df4157c3df88705ea746adb6174",
+   "prices.csv": "62173946ff9f17df35a03789985d36d6aadb032305fe2dbf82b82ca23043daed",
+   "spreads.csv": "50c3a7ce4a6158fac68aafb6af9468f9d1a380832e080276219ae5cd27f47f5a",
+   "valuation_dates.csv": "7e36f2c8dfd7f9a185d382e16ea21efd832f47f770e8d0a4dc0ebd2c1f774d77",
+   "yields.csv": "2890f9ca1bc9cbeffdf199cc3669b64616021056b8901ebf19e22da83a4ab5e2"
+  },
+  "flags": {
+   "include_reference_date_events": 0,
+   "include_todays_cashflows": -1,
+   "engine_include_settlement_flows": -1
+  },
+  "z_grid": [
+   -0.0125,
+   0.0,
+   0.0075
+  ],
+  "role_codes": {
+   "0": "ROLE_ENGINE",
+   "1": "ROLE_SETTLE",
+   "2": "ROLE_EXPIRY"
+  },
+  "tier": "exact (bitwise; DECISIONS.md D-2)",
+  "licence": "data computed with pureql (BSD-3-Clause, derived from QuantLib); see NOTICE.md"
+ },
+ "values": {
+  "1,0": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 108.36776235612268,
+     "settlement_value": 108.41230620520015,
+     "dirty_price": 108.41230620520015,
+     "clean_price": 108.34563953853349,
+     "market_value": 108.36776235612268,
+     "npv_base": 108.36776235612268
+    },
+    "role": {
+     "first_live[0]": 0,
+     "first_live[1]": 0,
+     "first_live[2]": 0,
+     "pv_base[0]": 108.36776235612268,
+     "pv_base[1]": 108.41230620520015
+    },
+    "z": {
+     "pv_z[-0.0125]": 120.1989364149401,
+     "dirty_from_z[-0.0125]": 120.1989364149401,
+     "clean_from_z[-0.0125]": 120.13226974827344,
+     "pv_z[0.0]": 108.41230620520007,
+     "dirty_from_z[0.0]": 108.41230620520008,
+     "clean_from_z[0.0]": 108.34563953853342,
+     "pv_z[0.0075]": 102.02113104566017,
+     "dirty_from_z[0.0075]": 102.02113104566017,
+     "clean_from_z[0.0075]": 101.9544643789935
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 74.0635575694049,
+     "settlement_value": 74.09400090290912,
+     "dirty_price": 74.09400090290912,
+     "clean_price": 74.09400090290912,
+     "market_value": 74.0635575694049,
+     "npv_base": 74.0635575694049
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 74.0635575694049,
+     "pv_base[1]": 74.09400090290912
+    },
+    "z": {
+     "pv_z[-0.0125]": 83.70637539654817,
+     "dirty_from_z[-0.0125]": 83.70637539654817,
+     "clean_from_z[-0.0125]": 83.70637539654817,
+     "pv_z[0.0]": 74.09400090290906,
+     "dirty_from_z[0.0]": 74.09400090290906,
+     "clean_from_z[0.0]": 74.09400090290906,
+     "pv_z[0.0075]": 68.91366466837114,
+     "dirty_from_z[0.0075]": 68.91366466837114,
+     "clean_from_z[0.0075]": 68.91366466837114
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0075,
+     "accrued_amount": 0.6111111111111178,
+     "accrued_cash": 6.111111111111178,
+     "npv": 946.0056514133396,
+     "settlement_value": 946.1987702220665,
+     "dirty_price": 94.61987702220665,
+     "clean_price": 94.00876591109554,
+     "market_value": 946.0056514133396,
+     "npv_base": 981.8270699162346
+    },
+    "role": {
+     "first_live[0]": 30,
+     "first_live[1]": 30,
+     "first_live[2]": 30,
+     "pv_base[0]": 981.8270699162346,
+     "pv_base[1]": 981.9884794130761,
+     "pv_sprd[0]": 946.0056514133396,
+     "pv_sprd[1]": 946.1987702220665,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997959003807608
+    },
+    "z": {
+     "pv_z[-0.0125]": 1045.4669306305902,
+     "dirty_from_z[-0.0125]": 104.54669306305902,
+     "clean_from_z[-0.0125]": 103.93558195194791,
+     "pv_z[0.0]": 981.9884794130758,
+     "dirty_from_z[0.0]": 98.19884794130759,
+     "clean_from_z[0.0]": 97.58773683019648,
+     "pv_z[0.0075]": 946.1987702220665,
+     "dirty_from_z[0.0075]": 94.61987702220665,
+     "clean_from_z[0.0075]": 94.00876591109554
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42263,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.03,
+     "accrued_amount": 2.375342465753416,
+     "accrued_cash": 2.375342465753416,
+     "npv": 85.71902247848648,
+     "settlement_value": 85.71902247848648,
+     "dirty_price": 85.71902247848648,
+     "clean_price": 83.34368001273306,
+     "market_value": 85.71902247848648,
+     "npv_base": 102.05188185314802
+    },
+    "role": {
+     "first_live[0]": 54,
+     "first_live[1]": 54,
+     "first_live[2]": 54,
+     "pv_base[0]": 102.05188185314802,
+     "pv_base[1]": 102.05188185314802,
+     "pv_sprd[0]": 85.71902247848648,
+     "pv_sprd[1]": 85.71902247848648,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 109.98414414016258,
+     "dirty_from_z[-0.0125]": 109.98414414016258,
+     "clean_from_z[-0.0125]": 107.60880167440916,
+     "pv_z[0.0]": 102.05188185314799,
+     "dirty_from_z[0.0]": 102.05188185314799,
+     "clean_from_z[0.0]": 99.67653938739457,
+     "pv_z[0.0075]": 97.63055584485721,
+     "dirty_from_z[0.0075]": 97.63055584485721,
+     "clean_from_z[0.0075]": 95.2552133791038
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.12986111111110699,
+     "accrued_cash": 0.12986111111110699,
+     "npv": 98.24558408141449,
+     "settlement_value": 98.25365939278561,
+     "dirty_price": 98.25365939278561,
+     "clean_price": 98.1237982816745,
+     "market_value": 98.24558408141449,
+     "npv_base": 98.24558408141449
+    },
+    "role": {
+     "first_live[0]": 67,
+     "first_live[1]": 67,
+     "first_live[2]": 67,
+     "pv_base[0]": 98.24558408141449,
+     "pv_base[1]": 98.25365939278561
+    },
+    "z": {
+     "pv_z[-0.0125]": 106.74900609641904,
+     "dirty_from_z[-0.0125]": 106.74900609641904,
+     "clean_from_z[-0.0125]": 106.61914498530793,
+     "pv_z[0.0]": 98.25365939278555,
+     "dirty_from_z[0.0]": 98.25365939278555,
+     "clean_from_z[0.0]": 98.12379828167444,
+     "pv_z[0.0075]": 93.54835982111537,
+     "dirty_from_z[0.0075]": 93.54835982111537,
+     "clean_from_z[0.0075]": 93.41849871000426
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0075,
+     "accrued_amount": 0.491666666666668,
+     "accrued_cash": 0.49166666666666803,
+     "npv": 81.35597425347953,
+     "settlement_value": 81.37258236655705,
+     "dirty_price": 81.37258236655705,
+     "clean_price": 80.88091569989038,
+     "market_value": 81.35597425347953,
+     "npv_base": 87.09390872173573
+    },
+    "role": {
+     "first_live[0]": 83,
+     "first_live[1]": 83,
+     "first_live[2]": 83,
+     "pv_base[0]": 87.09390872173573,
+     "pv_base[1]": 87.10822670543722,
+     "pv_sprd[0]": 81.35597425347953,
+     "pv_sprd[1]": 81.37258236655705,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997959003807608
+    },
+    "z": {
+     "pv_z[-0.0125]": 97.74239326541624,
+     "dirty_from_z[-0.0125]": 97.74239326541625,
+     "clean_from_z[-0.0125]": 97.25072659874958,
+     "pv_z[0.0]": 87.10822670543715,
+     "dirty_from_z[0.0]": 87.10822670543716,
+     "clean_from_z[0.0]": 86.61656003877049,
+     "pv_z[0.0075]": 81.37258236655705,
+     "dirty_from_z[0.0075]": 81.37258236655705,
+     "clean_from_z[0.0075]": 80.88091569989038
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42536,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.03,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 70.01421983671416,
+     "settlement_value": 73.15649888332264,
+     "dirty_price": 73.15649888332264,
+     "clean_price": 73.15649888332264,
+     "market_value": 70.01421983671416,
+     "npv_base": 92.78029867855264
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 92.78029867855264,
+     "pv_base[1]": 94.88566824795008,
+     "pv_sprd[0]": 70.01421983671416,
+     "pv_sprd[1]": 73.15649888332264,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9570471647143735
+    },
+    "z": {
+     "pv_z[-0.0125]": 106.0987185272593,
+     "dirty_from_z[-0.0125]": 106.0987185272593,
+     "clean_from_z[-0.0125]": 106.0987185272593,
+     "pv_z[0.0]": 94.88566824795001,
+     "dirty_from_z[0.0]": 94.88566824795002,
+     "clean_from_z[0.0]": 94.88566824795002,
+     "pv_z[0.0075]": 88.81901131121879,
+     "dirty_from_z[0.0075]": 88.81901131121879,
+     "clean_from_z[0.0075]": 88.81901131121879
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.36333333333333767,
+     "accrued_cash": 0.3633333333333377,
+     "npv": 99.08803471621518,
+     "settlement_value": 99.10432449912769,
+     "dirty_price": 99.10432449912769,
+     "clean_price": 98.74099116579434,
+     "market_value": 99.08803471621518,
+     "npv_base": 99.08803471621518
+    },
+    "role": {
+     "first_live[0]": 105,
+     "first_live[1]": 105,
+     "first_live[2]": 105,
+     "pv_base[0]": 99.08803471621518,
+     "pv_base[1]": 99.10432449912769
+    },
+    "z": {
+     "pv_z[-0.0125]": 99.95964515585419,
+     "dirty_from_z[-0.0125]": 99.95964515585419,
+     "clean_from_z[-0.0125]": 99.59631182252085,
+     "pv_z[0.0]": 99.10432449912769,
+     "dirty_from_z[0.0]": 99.10432449912769,
+     "clean_from_z[0.0]": 98.74099116579434,
+     "pv_z[0.0075]": 98.59956875420401,
+     "dirty_from_z[0.0075]": 98.59956875420401,
+     "clean_from_z[0.0075]": 98.23623542087067
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0075,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 92.22552870553511,
+     "settlement_value": 92.27260350682019,
+     "dirty_price": 92.27260350682019,
+     "clean_price": 92.15593684015352,
+     "market_value": 92.22552870553511,
+     "npv_base": 95.4382852848575
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 95.4382852848575,
+     "pv_base[1]": 95.47751455824574,
+     "pv_sprd[0]": 92.22552870553511,
+     "pv_sprd[1]": 92.27260350682019,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9994898290554726
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.13318066135349,
+     "dirty_from_z[-0.0125]": 101.13318066135349,
+     "clean_from_z[-0.0125]": 101.01651399468682,
+     "pv_z[0.0]": 95.47751455824572,
+     "dirty_from_z[0.0]": 95.47751455824572,
+     "clean_from_z[0.0]": 95.36084789157904,
+     "pv_z[0.0075]": 92.27260350682019,
+     "dirty_from_z[0.0075]": 92.27260350682019,
+     "clean_from_z[0.0075]": 92.15593684015352
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42263,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 96.44409523012324,
+     "settlement_value": 96.44409523012324,
+     "dirty_price": 96.44409523012324,
+     "clean_price": 96.44135550409584,
+     "market_value": 96.44409523012324,
+     "npv_base": 96.44409523012324
+    },
+    "role": {
+     "first_live[0]": 130,
+     "first_live[1]": 130,
+     "first_live[2]": 130,
+     "pv_base[0]": 96.44409523012324,
+     "pv_base[1]": 96.44409523012324
+    },
+    "z": {
+     "pv_z[-0.0125]": 98.59981465746768,
+     "dirty_from_z[-0.0125]": 98.59981465746768,
+     "clean_from_z[-0.0125]": 98.59707493144028,
+     "pv_z[0.0]": 96.44409523012321,
+     "dirty_from_z[0.0]": 96.4440952301232,
+     "clean_from_z[0.0]": 96.4413555040958,
+     "pv_z[0.0075]": 95.18569836920346,
+     "dirty_from_z[0.0075]": 95.18569836920345,
+     "clean_from_z[0.0075]": 95.18295864317605
+    }
+   }
+  },
+  "1,1": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 113.02735003228602,
+     "settlement_value": 113.03358555764449,
+     "dirty_price": 113.03358555764449,
+     "clean_price": 112.96691889097782,
+     "market_value": 113.02735003228602,
+     "npv_base": 113.02735003228602
+    },
+    "role": {
+     "first_live[0]": 1,
+     "first_live[1]": 1,
+     "first_live[2]": 1,
+     "pv_base[0]": 113.02735003228602,
+     "pv_base[1]": 113.03358555764449
+    },
+    "z": {
+     "pv_z[-0.0125]": 125.08067381491794,
+     "dirty_from_z[-0.0125]": 125.08067381491793,
+     "clean_from_z[-0.0125]": 125.01400714825127,
+     "pv_z[0.0]": 113.03358555764449,
+     "dirty_from_z[0.0]": 113.03358555764449,
+     "clean_from_z[0.0]": 112.96691889097782,
+     "pv_z[0.0075]": 106.42476811062254,
+     "dirty_from_z[0.0075]": 106.42476811062254,
+     "clean_from_z[0.0075]": 106.35810144395587
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 78.58672191076202,
+     "settlement_value": 78.59105740564156,
+     "dirty_price": 78.59105740564156,
+     "clean_price": 78.59105740564156,
+     "market_value": 78.58672191076202,
+     "npv_base": 78.58672191076202
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 78.58672191076202,
+     "pv_base[1]": 78.59105740564156
+    },
+    "z": {
+     "pv_z[-0.0125]": 88.49592888305122,
+     "dirty_from_z[-0.0125]": 88.49592888305122,
+     "clean_from_z[-0.0125]": 88.49592888305122,
+     "pv_z[0.0]": 78.59105740564156,
+     "dirty_from_z[0.0]": 78.59105740564156,
+     "clean_from_z[0.0]": 78.59105740564156,
+     "pv_z[0.0075]": 73.1885319552132,
+     "dirty_from_z[0.0075]": 73.1885319552132,
+     "clean_from_z[0.0075]": 73.1885319552132
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.008,
+     "accrued_amount": 0.6111111111111178,
+     "accrued_cash": 6.111111111111178,
+     "npv": 1003.668526981354,
+     "settlement_value": 1003.7345835756472,
+     "dirty_price": 100.37345835756473,
+     "clean_price": 99.76234724645361,
+     "market_value": 1003.668526981354,
+     "npv_base": 1042.1341332638647
+    },
+    "role": {
+     "first_live[0]": 32,
+     "first_live[1]": 32,
+     "first_live[2]": 32,
+     "pv_base[0]": 1042.1341332638647,
+     "pv_base[1]": 1042.1570368803552,
+     "pv_sprd[0]": 1003.668526981354,
+     "pv_sprd[1]": 1003.7345835756472,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.999934189181708
+    },
+    "z": {
+     "pv_z[-0.0125]": 1105.2960852602928,
+     "dirty_from_z[-0.0125]": 110.52960852602928,
+     "clean_from_z[-0.0125]": 109.91849741491816,
+     "pv_z[0.0]": 1042.157036880355,
+     "dirty_from_z[0.0]": 104.2157036880355,
+     "clean_from_z[0.0]": 103.60459257692439,
+     "pv_z[0.0075]": 1006.0920484425578,
+     "dirty_from_z[0.0075]": 100.60920484425579,
+     "clean_from_z[0.0075]": 99.99809373314467
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42445,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.031,
+     "accrued_amount": 3.8712328767123383,
+     "accrued_cash": 3.8712328767123383,
+     "npv": 92.07537839954533,
+     "settlement_value": 92.07537839954533,
+     "dirty_price": 92.07537839954533,
+     "clean_price": 88.20414552283299,
+     "market_value": 92.07537839954533,
+     "npv_base": 109.51177836498292
+    },
+    "role": {
+     "first_live[0]": 54,
+     "first_live[1]": 54,
+     "first_live[2]": 54,
+     "pv_base[0]": 109.51177836498292,
+     "pv_base[1]": 109.51177836498292,
+     "pv_sprd[0]": 92.07537839954533,
+     "pv_sprd[1]": 92.07537839954533,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 117.52894743793725,
+     "dirty_from_z[-0.0125]": 117.52894743793723,
+     "clean_from_z[-0.0125]": 113.65771456122489,
+     "pv_z[0.0]": 109.51177836498292,
+     "dirty_from_z[0.0]": 109.51177836498292,
+     "clean_from_z[0.0]": 105.64054548827058,
+     "pv_z[0.0075]": 104.98674688150436,
+     "dirty_from_z[0.0075]": 104.98674688150437,
+     "clean_from_z[0.0075]": 101.11551400479203
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.12986111111110699,
+     "accrued_cash": 0.12986111111110699,
+     "npv": 103.88551972697854,
+     "settlement_value": 103.88665975151899,
+     "dirty_price": 103.88665975151898,
+     "clean_price": 103.75679864040787,
+     "market_value": 103.88551972697854,
+     "npv_base": 103.88551972697854
+    },
+    "role": {
+     "first_live[0]": 68,
+     "first_live[1]": 68,
+     "first_live[2]": 68,
+     "pv_base[0]": 103.88551972697854,
+     "pv_base[1]": 103.88665975151899
+    },
+    "z": {
+     "pv_z[-0.0125]": 112.52532705307445,
+     "dirty_from_z[-0.0125]": 112.52532705307445,
+     "clean_from_z[-0.0125]": 112.39546594196334,
+     "pv_z[0.0]": 103.88665975151899,
+     "dirty_from_z[0.0]": 103.88665975151898,
+     "clean_from_z[0.0]": 103.75679864040787,
+     "pv_z[0.0075]": 99.04212778747767,
+     "dirty_from_z[0.0075]": 99.04212778747768,
+     "clean_from_z[0.0075]": 98.91226667636657
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.008,
+     "accrued_amount": 1.2416666666666742,
+     "accrued_cash": 1.2416666666666742,
+     "npv": 85.95933485995528,
+     "settlement_value": 85.96499228644211,
+     "dirty_price": 85.9649922864421,
+     "clean_price": 84.72332561977542,
+     "market_value": 85.95933485995528,
+     "npv_base": 92.30366104959643
+    },
+    "role": {
+     "first_live[0]": 83,
+     "first_live[1]": 83,
+     "first_live[2]": 83,
+     "pv_base[0]": 92.30366104959643,
+     "pv_base[1]": 92.30568966336683,
+     "pv_sprd[0]": 85.95933485995528,
+     "pv_sprd[1]": 85.96499228644211,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.999934189181708
+    },
+    "z": {
+     "pv_z[-0.0125]": 103.22316667987705,
+     "dirty_from_z[-0.0125]": 103.22316667987705,
+     "clean_from_z[-0.0125]": 101.98150001321038,
+     "pv_z[0.0]": 92.30568966336683,
+     "dirty_from_z[0.0]": 92.30568966336683,
+     "clean_from_z[0.0]": 91.06402299670016,
+     "pv_z[0.0075]": 86.34742549405912,
+     "dirty_from_z[0.0075]": 86.34742549405911,
+     "clean_from_z[0.0075]": 85.10575882739244
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42536,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.031,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 73.6356800691415,
+     "settlement_value": 74.29019825115,
+     "dirty_price": 74.29019825115,
+     "clean_price": 74.29019825115,
+     "market_value": 73.6356800691415,
+     "npv_base": 98.23352406603713
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 98.23352406603713,
+     "pv_base[1]": 98.34366259930748,
+     "pv_sprd[0]": 73.6356800691415,
+     "pv_sprd[1]": 74.29019825115,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9911897101176687
+    },
+    "z": {
+     "pv_z[-0.0125]": 110.25194360764196,
+     "dirty_from_z[-0.0125]": 110.25194360764198,
+     "clean_from_z[-0.0125]": 110.25194360764198,
+     "pv_z[0.0]": 98.34366259930749,
+     "dirty_from_z[0.0]": 98.34366259930749,
+     "clean_from_z[0.0]": 98.34366259930749,
+     "pv_z[0.0075]": 91.85455802810812,
+     "dirty_from_z[0.0075]": 91.85455802810812,
+     "clean_from_z[0.0075]": 91.85455802810812
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.9700000000000043,
+     "accrued_cash": 0.9700000000000042,
+     "npv": 101.12569504215162,
+     "settlement_value": 101.12791754313557,
+     "dirty_price": 101.12791754313557,
+     "clean_price": 100.15791754313557,
+     "market_value": 101.12569504215162,
+     "npv_base": 101.12569504215162
+    },
+    "role": {
+     "first_live[0]": 105,
+     "first_live[1]": 105,
+     "first_live[2]": 105,
+     "pv_base[0]": 101.12569504215162,
+     "pv_base[1]": 101.12791754313557
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.3879977708474,
+     "dirty_from_z[-0.0125]": 101.38799777084742,
+     "clean_from_z[-0.0125]": 100.41799777084742,
+     "pv_z[0.0]": 101.12791754313557,
+     "dirty_from_z[0.0]": 101.12791754313557,
+     "clean_from_z[0.0]": 100.15791754313557,
+     "pv_z[0.0075]": 100.97218975155467,
+     "dirty_from_z[0.0075]": 100.97218975155467,
+     "clean_from_z[0.0075]": 100.00218975155467
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.008,
+     "accrued_amount": 0.12222222222222356,
+     "accrued_cash": 0.12222222222222356,
+     "npv": 98.16252485600171,
+     "settlement_value": 98.1786990343626,
+     "dirty_price": 98.1786990343626,
+     "clean_price": 98.05647681214037,
+     "market_value": 98.16252485600171,
+     "npv_base": 101.57793395524152
+    },
+    "role": {
+     "first_live[0]": 109,
+     "first_live[1]": 109,
+     "first_live[2]": 109,
+     "pv_base[0]": 101.57793395524152,
+     "pv_base[1]": 101.58353783592047,
+     "pv_sprd[0]": 98.16252485600171,
+     "pv_sprd[1]": 98.1786990343626,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998352577644645
+    },
+    "z": {
+     "pv_z[-0.0125]": 107.14850278681658,
+     "dirty_from_z[-0.0125]": 107.14850278681656,
+     "clean_from_z[-0.0125]": 107.02628056459434,
+     "pv_z[0.0]": 101.58353783592047,
+     "dirty_from_z[0.0]": 101.58353783592047,
+     "clean_from_z[0.0]": 101.46131561369825,
+     "pv_z[0.0075]": 98.38802196129528,
+     "dirty_from_z[0.0075]": 98.38802196129527,
+     "clean_from_z[0.0075]": 98.26579973907305
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42445,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 100.26975048085298,
+     "settlement_value": 100.26975048085298,
+     "dirty_price": 100.26975048085298,
+     "clean_price": 100.26701075482558,
+     "market_value": 100.26975048085298,
+     "npv_base": 100.26975048085298
+    },
+    "role": {
+     "first_live[0]": 136,
+     "first_live[1]": 136,
+     "first_live[2]": 136,
+     "pv_base[0]": 100.26975048085298,
+     "pv_base[1]": 100.26975048085298
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.938621672882,
+     "dirty_from_z[-0.0125]": 101.938621672882,
+     "clean_from_z[-0.0125]": 101.9358819468546,
+     "pv_z[0.0]": 100.26975048085298,
+     "dirty_from_z[0.0]": 100.26975048085298,
+     "clean_from_z[0.0]": 100.26701075482558,
+     "pv_z[0.0075]": 99.28162329100768,
+     "dirty_from_z[0.0075]": 99.28162329100768,
+     "clean_from_z[0.0075]": 99.27888356498028
+    }
+   }
+  },
+  "1,2": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 111.22369596962213,
+     "settlement_value": 111.23288011116327,
+     "dirty_price": 111.23288011116327,
+     "clean_price": 111.1662134444966,
+     "market_value": 111.22369596962213,
+     "npv_base": 111.22369596962213
+    },
+    "role": {
+     "first_live[0]": 2,
+     "first_live[1]": 2,
+     "first_live[2]": 2,
+     "pv_base[0]": 111.22369596962213,
+     "pv_base[1]": 111.23288011116327
+    },
+    "z": {
+     "pv_z[-0.0125]": 122.50901524919618,
+     "dirty_from_z[-0.0125]": 122.50901524919618,
+     "clean_from_z[-0.0125]": 122.44234858252952,
+     "pv_z[0.0]": 111.23288011116325,
+     "dirty_from_z[0.0]": 111.23288011116325,
+     "clean_from_z[0.0]": 111.16621344449659,
+     "pv_z[0.0075]": 105.01894729537648,
+     "dirty_from_z[0.0075]": 105.01894729537648,
+     "clean_from_z[0.0075]": 104.95228062870981
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 78.65043117552243,
+     "settlement_value": 78.65692562516188,
+     "dirty_price": 78.65692562516188,
+     "clean_price": 78.65692562516188,
+     "market_value": 78.65043117552243,
+     "npv_base": 78.65043117552243
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 78.65043117552243,
+     "pv_base[1]": 78.65692562516188
+    },
+    "z": {
+     "pv_z[-0.0125]": 88.01374030907633,
+     "dirty_from_z[-0.0125]": 88.01374030907633,
+     "clean_from_z[-0.0125]": 88.01374030907633,
+     "pv_z[0.0]": 78.65692562516186,
+     "dirty_from_z[0.0]": 78.65692562516186,
+     "clean_from_z[0.0]": 78.65692562516186,
+     "pv_z[0.0075]": 73.52734116790651,
+     "dirty_from_z[0.0075]": 73.52734116790651,
+     "clean_from_z[0.0075]": 73.52734116790651
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 998.4955841414711,
+     "settlement_value": 992.2656147710777,
+     "dirty_price": 99.22656147710777,
+     "clean_price": 99.22656147710777,
+     "market_value": 998.4955841414711,
+     "npv_base": 1035.2629316889083
+    },
+    "role": {
+     "first_live[0]": 34,
+     "first_live[1]": 35,
+     "first_live[2]": 34,
+     "pv_base[0]": 1035.2629316889083,
+     "pv_base[1]": 1028.9423678636563,
+     "pv_sprd[0]": 998.4955841414711,
+     "pv_sprd[1]": 992.2656147710777,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998408663677847
+    },
+    "z": {
+     "pv_z[-0.0125]": 1085.4445491430142,
+     "dirty_from_z[-0.0125]": 108.54445491430143,
+     "clean_from_z[-0.0125]": 108.54445491430143,
+     "pv_z[0.0]": 1028.9423678636563,
+     "dirty_from_z[0.0]": 102.89423678636562,
+     "clean_from_z[0.0]": 102.89423678636562,
+     "pv_z[0.0075]": 996.509377711406,
+     "dirty_from_z[0.0075]": 99.6509377711406,
+     "clean_from_z[0.0075]": 99.6509377711406
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42629,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.032,
+     "accrued_amount": 0.6410958904109698,
+     "accrued_cash": 0.6410958904109698,
+     "npv": 88.69799090359122,
+     "settlement_value": 88.69799090359122,
+     "dirty_price": 88.69799090359122,
+     "clean_price": 88.05689501318025,
+     "market_value": 88.69799090359122,
+     "npv_base": 105.26442402637295
+    },
+    "role": {
+     "first_live[0]": 55,
+     "first_live[1]": 55,
+     "first_live[2]": 55,
+     "pv_base[0]": 105.26442402637295,
+     "pv_base[1]": 105.26442402637295,
+     "pv_sprd[0]": 88.69799090359122,
+     "pv_sprd[1]": 88.69799090359122,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 112.59003582378152,
+     "dirty_from_z[-0.0125]": 112.59003582378153,
+     "clean_from_z[-0.0125]": 111.94893993337057,
+     "pv_z[0.0]": 105.26442402637294,
+     "dirty_from_z[0.0]": 105.26442402637295,
+     "clean_from_z[0.0]": 104.62332813596198,
+     "pv_z[0.0075]": 101.11015914081118,
+     "dirty_from_z[0.0075]": 101.11015914081118,
+     "clean_from_z[0.0075]": 100.46906325040021
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.14513888888889603,
+     "accrued_cash": 0.14513888888889603,
+     "npv": 102.99219596909111,
+     "settlement_value": 102.99728919279418,
+     "dirty_price": 102.99728919279418,
+     "clean_price": 102.85215030390529,
+     "market_value": 102.99219596909111,
+     "npv_base": 102.99219596909111
+    },
+    "role": {
+     "first_live[0]": 69,
+     "first_live[1]": 69,
+     "first_live[2]": 69,
+     "pv_base[0]": 102.99219596909111,
+     "pv_base[1]": 102.99728919279418
+    },
+    "z": {
+     "pv_z[-0.0125]": 110.9597375057475,
+     "dirty_from_z[-0.0125]": 110.95973750574748,
+     "clean_from_z[-0.0125]": 110.81459861685859,
+     "pv_z[0.0]": 102.99728919279417,
+     "dirty_from_z[0.0]": 102.99728919279418,
+     "clean_from_z[0.0]": 102.85215030390529,
+     "pv_z[0.0075]": 98.51040992647503,
+     "dirty_from_z[0.0075]": 98.51040992647503,
+     "clean_from_z[0.0075]": 98.36527103758614
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.49999999999998934,
+     "accrued_cash": 0.49999999999998934,
+     "npv": 84.54019487170507,
+     "settlement_value": 84.55365020117864,
+     "dirty_price": 84.55365020117864,
+     "clean_price": 84.05365020117866,
+     "market_value": 84.54019487170507,
+     "npv_base": 90.9076951057824
+    },
+    "role": {
+     "first_live[0]": 84,
+     "first_live[1]": 84,
+     "first_live[2]": 84,
+     "pv_base[0]": 90.9076951057824,
+     "pv_base[1]": 90.91369481258445,
+     "pv_sprd[0]": 84.54019487170507,
+     "pv_sprd[1]": 84.55365020117864,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998408663677847
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.19153453447407,
+     "dirty_from_z[-0.0125]": 101.19153453447407,
+     "clean_from_z[-0.0125]": 100.69153453447409,
+     "pv_z[0.0]": 90.91369481258445,
+     "dirty_from_z[0.0]": 90.91369481258445,
+     "clean_from_z[0.0]": 90.41369481258447,
+     "pv_z[0.0075]": 85.27703193959704,
+     "dirty_from_z[0.0075]": 85.27703193959704,
+     "clean_from_z[0.0075]": 84.77703193959705
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.032,
+     "accrued_amount": 0.26388888888888573,
+     "accrued_cash": 0.26388888888888573,
+     "npv": 74.12143174335887,
+     "settlement_value": 74.1523231371778,
+     "dirty_price": 74.1523231371778,
+     "clean_price": 73.88843424828892,
+     "market_value": 74.12143174335887,
+     "npv_base": 98.18588907501065
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 98.18588907501065,
+     "pv_base[1]": 98.19236912651634,
+     "pv_sprd[0]": 74.12143174335887,
+     "pv_sprd[1]": 74.1523231371778,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9995834062573901
+    },
+    "z": {
+     "pv_z[-0.0125]": 109.71138674406424,
+     "dirty_from_z[-0.0125]": 109.71138674406424,
+     "clean_from_z[-0.0125]": 109.44749785517536,
+     "pv_z[0.0]": 98.19236912651634,
+     "dirty_from_z[0.0]": 98.19236912651633,
+     "clean_from_z[0.0]": 97.92848023762744,
+     "pv_z[0.0075]": 91.89930122917777,
+     "dirty_from_z[0.0075]": 91.89930122917777,
+     "clean_from_z[0.0075]": 91.63541234028888
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     }
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 97.89418915105149,
+     "settlement_value": 97.91367287055071,
+     "dirty_price": 97.91367287055071,
+     "clean_price": 97.79700620388404,
+     "market_value": 97.89418915105149,
+     "npv_base": 101.11741523440828
+    },
+    "role": {
+     "first_live[0]": 111,
+     "first_live[1]": 111,
+     "first_live[2]": 111,
+     "pv_base[0]": 101.11741523440828,
+     "pv_base[1]": 101.12576486391565,
+     "pv_sprd[0]": 97.89418915105149,
+     "pv_sprd[1]": 97.91367287055071,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.999801011248705
+    },
+    "z": {
+     "pv_z[-0.0125]": 106.04680521807438,
+     "dirty_from_z[-0.0125]": 106.04680521807438,
+     "clean_from_z[-0.0125]": 105.93013855140771,
+     "pv_z[0.0]": 101.12576486391565,
+     "dirty_from_z[0.0]": 101.12576486391565,
+     "clean_from_z[0.0]": 101.00909819724897,
+     "pv_z[0.0075]": 98.2860728087879,
+     "dirty_from_z[0.0075]": 98.2860728087879,
+     "clean_from_z[0.0075]": 98.16940614212123
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42629,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 100.14213922489563,
+     "settlement_value": 100.14213922489563,
+     "dirty_price": 100.14213922489563,
+     "clean_price": 100.13939949886823,
+     "market_value": 100.14213922489563,
+     "npv_base": 100.14213922489563
+    },
+    "role": {
+     "first_live[0]": 142,
+     "first_live[1]": 142,
+     "first_live[2]": 142,
+     "pv_base[0]": 100.14213922489563,
+     "pv_base[1]": 100.14213922489563
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.17589627757721,
+     "dirty_from_z[-0.0125]": 101.17589627757721,
+     "clean_from_z[-0.0125]": 101.17315655154981,
+     "pv_z[0.0]": 100.14213922489563,
+     "dirty_from_z[0.0]": 100.14213922489563,
+     "clean_from_z[0.0]": 100.13939949886823,
+     "pv_z[0.0075]": 99.52697376383554,
+     "dirty_from_z[0.0075]": 99.52697376383554,
+     "clean_from_z[0.0075]": 99.52423403780814
+    }
+   }
+  },
+  "1,3": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 105.44621869958905,
+     "settlement_value": 105.47394144937479,
+     "dirty_price": 105.47394144937479,
+     "clean_price": 105.40727478270813,
+     "market_value": 105.44621869958905,
+     "npv_base": 105.44621869958905
+    },
+    "role": {
+     "first_live[0]": 4,
+     "first_live[1]": 4,
+     "first_live[2]": 4,
+     "pv_base[0]": 105.44621869958905,
+     "pv_base[1]": 105.47394144937479
+    },
+    "z": {
+     "pv_z[-0.0125]": 114.82381055348702,
+     "dirty_from_z[-0.0125]": 114.82381055348702,
+     "clean_from_z[-0.0125]": 114.75714388682036,
+     "pv_z[0.0]": 105.47394144937479,
+     "dirty_from_z[0.0]": 105.47394144937479,
+     "clean_from_z[0.0]": 105.40727478270813,
+     "pv_z[0.0075]": 100.31379413894012,
+     "dirty_from_z[0.0075]": 100.31379413894012,
+     "clean_from_z[0.0075]": 100.24712747227346
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 77.42469752468548,
+     "settlement_value": 77.44505316705165,
+     "dirty_price": 77.44505316705165,
+     "clean_price": 77.44505316705165,
+     "market_value": 77.42469752468548,
+     "npv_base": 77.42469752468548
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 77.42469752468548,
+     "pv_base[1]": 77.44505316705165
+    },
+    "z": {
+     "pv_z[-0.0125]": 85.36292977153663,
+     "dirty_from_z[-0.0125]": 85.36292977153661,
+     "clean_from_z[-0.0125]": 85.36292977153661,
+     "pv_z[0.0]": 77.44505316705165,
+     "dirty_from_z[0.0]": 77.44505316705165,
+     "clean_from_z[0.0]": 77.44505316705165,
+     "pv_z[0.0075]": 73.0925789746534,
+     "dirty_from_z[0.0075]": 73.0925789746534,
+     "clean_from_z[0.0075]": 73.0925789746534
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 955.7386541168246,
+     "settlement_value": 949.5627326655245,
+     "dirty_price": 94.95627326655246,
+     "clean_price": 94.95627326655246,
+     "market_value": 955.7386541168246,
+     "npv_base": 983.8835620932668
+    },
+    "role": {
+     "first_live[0]": 38,
+     "first_live[1]": 39,
+     "first_live[2]": 38,
+     "pv_base[0]": 983.8835620932668,
+     "pv_base[1]": 977.6671134815426,
+     "pv_sprd[0]": 955.7386541168246,
+     "pv_sprd[1]": 949.5627326655245,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997772194399936
+    },
+    "z": {
+     "pv_z[-0.0125]": 1018.557610703752,
+     "dirty_from_z[-0.0125]": 101.8557610703752,
+     "clean_from_z[-0.0125]": 101.8557610703752,
+     "pv_z[0.0]": 977.6671134815426,
+     "dirty_from_z[0.0]": 97.76671134815426,
+     "clean_from_z[0.0]": 97.76671134815426,
+     "pv_z[0.0075]": 954.1717885959469,
+     "dirty_from_z[0.0075]": 95.41717885959469,
+     "clean_from_z[0.0075]": 95.41717885959469
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42996,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.033,
+     "accrued_amount": 0.6575342465753531,
+     "accrued_cash": 0.6575342465753531,
+     "npv": 86.45401912951655,
+     "settlement_value": 86.45401912951655,
+     "dirty_price": 86.45401912951655,
+     "clean_price": 85.7964848829412,
+     "market_value": 86.45401912951655,
+     "npv_base": 99.55796463069218
+    },
+    "role": {
+     "first_live[0]": 56,
+     "first_live[1]": 56,
+     "first_live[2]": 56,
+     "pv_base[0]": 99.55796463069218,
+     "pv_base[1]": 99.55796463069218,
+     "pv_sprd[0]": 86.45401912951655,
+     "pv_sprd[1]": 86.45401912951655,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 105.1713253714963,
+     "dirty_from_z[-0.0125]": 105.1713253714963,
+     "clean_from_z[-0.0125]": 104.51379112492094,
+     "pv_z[0.0]": 99.55796463069218,
+     "dirty_from_z[0.0]": 99.55796463069218,
+     "clean_from_z[0.0]": 98.90043038411683,
+     "pv_z[0.0075]": 96.37070814637265,
+     "dirty_from_z[0.0075]": 96.37070814637265,
+     "clean_from_z[0.0075]": 95.7131738997973
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.14513888888889603,
+     "accrued_cash": 0.14513888888889603,
+     "npv": 97.74416212196117,
+     "settlement_value": 97.75272730822799,
+     "dirty_price": 97.75272730822799,
+     "clean_price": 97.6075884193391,
+     "market_value": 97.74416212196117,
+     "npv_base": 97.74416212196117
+    },
+    "role": {
+     "first_live[0]": 71,
+     "first_live[1]": 71,
+     "first_live[2]": 71,
+     "pv_base[0]": 97.74416212196117,
+     "pv_base[1]": 97.75272730822799
+    },
+    "z": {
+     "pv_z[-0.0125]": 104.00653408591693,
+     "dirty_from_z[-0.0125]": 104.00653408591693,
+     "clean_from_z[-0.0125]": 103.86139519702803,
+     "pv_z[0.0]": 97.75272730822799,
+     "dirty_from_z[0.0]": 97.75272730822799,
+     "clean_from_z[0.0]": 97.6075884193391,
+     "pv_z[0.0075]": 94.22386329446469,
+     "dirty_from_z[0.0075]": 94.2238632944647,
+     "clean_from_z[0.0075]": 94.07872440557581
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 0.491666666666668,
+     "accrued_cash": 0.49166666666666803,
+     "npv": 82.38965166996917,
+     "settlement_value": 82.40801057271356,
+     "dirty_price": 82.40801057271355,
+     "clean_price": 81.91634390604688,
+     "market_value": 82.38965166996917,
+     "npv_base": 88.06498201204317
+    },
+    "role": {
+     "first_live[0]": 85,
+     "first_live[1]": 85,
+     "first_live[2]": 85,
+     "pv_base[0]": 88.06498201204317,
+     "pv_base[1]": 88.08041671437152,
+     "pv_sprd[0]": 82.38965166996917,
+     "pv_sprd[1]": 82.40801057271356,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997772194399936
+    },
+    "z": {
+     "pv_z[-0.0125]": 96.73593425845269,
+     "dirty_from_z[-0.0125]": 96.73593425845269,
+     "clean_from_z[-0.0125]": 96.24426759178601,
+     "pv_z[0.0]": 88.08041671437152,
+     "dirty_from_z[0.0]": 88.08041671437154,
+     "clean_from_z[0.0]": 87.58875004770486,
+     "pv_z[0.0075]": 83.3229495239776,
+     "dirty_from_z[0.0075]": 83.3229495239776,
+     "clean_from_z[0.0075]": 82.83128285731092
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.033,
+     "accrued_amount": 0.3958333333333286,
+     "accrued_cash": 0.3958333333333286,
+     "npv": 74.92127361490249,
+     "settlement_value": 74.94732372190107,
+     "dirty_price": 74.94732372190107,
+     "clean_price": 74.55149038856774,
+     "market_value": 74.92127361490249,
+     "npv_base": 96.00902748822584
+    },
+    "role": {
+     "first_live[0]": 95,
+     "first_live[1]": 95,
+     "first_live[2]": 95,
+     "pv_base[0]": 96.00902748822584,
+     "pv_base[1]": 96.02585450307622,
+     "pv_sprd[0]": 74.92127361490249,
+     "pv_sprd[1]": 74.94732372190107,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9996524211178608
+    },
+    "z": {
+     "pv_z[-0.0125]": 105.8015496313888,
+     "dirty_from_z[-0.0125]": 105.8015496313888,
+     "clean_from_z[-0.0125]": 105.40571629805547,
+     "pv_z[0.0]": 96.02585450307622,
+     "dirty_from_z[0.0]": 96.02585450307623,
+     "clean_from_z[0.0]": 95.6300211697429,
+     "pv_z[0.0075]": 90.67346692960983,
+     "dirty_from_z[0.0075]": 90.67346692960982,
+     "clean_from_z[0.0075]": 90.27763359627649
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     }
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 94.31494960040382,
+     "settlement_value": 94.34647568542285,
+     "dirty_price": 94.34647568542285,
+     "clean_price": 94.22980901875617,
+     "market_value": 94.31494960040382,
+     "npv_base": 96.69373133359053
+    },
+    "role": {
+     "first_live[0]": 115,
+     "first_live[1]": 115,
+     "first_live[2]": 115,
+     "pv_base[0]": 96.69373133359053,
+     "pv_base[1]": 96.7191529765159,
+     "pv_sprd[0]": 94.31494960040382,
+     "pv_sprd[1]": 94.34647568542285,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9996658477723732
+    },
+    "z": {
+     "pv_z[-0.0125]": 100.15199527302455,
+     "dirty_from_z[-0.0125]": 100.15199527302455,
+     "clean_from_z[-0.0125]": 100.03532860635788,
+     "pv_z[0.0]": 96.7191529765159,
+     "dirty_from_z[0.0]": 96.7191529765159,
+     "clean_from_z[0.0]": 96.60248630984923,
+     "pv_z[0.0075]": 94.73634886941322,
+     "dirty_from_z[0.0075]": 94.73634886941322,
+     "clean_from_z[0.0075]": 94.61968220274655
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42996,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 153,
+     "first_live[1]": 153,
+     "first_live[2]": 153,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     }
+    }
+   }
+  },
+  "2,0": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 112.41746590374942,
+     "settlement_value": 112.42525015078391,
+     "dirty_price": 112.42525015078391,
+     "clean_price": 112.35858348411725,
+     "market_value": 112.41746590374942,
+     "npv_base": 112.41746590374942
+    },
+    "role": {
+     "first_live[0]": 0,
+     "first_live[1]": 0,
+     "first_live[2]": 0,
+     "pv_base[0]": 112.41746590374942,
+     "pv_base[1]": 112.42525015078391
+    },
+    "z": {
+     "pv_z[-0.0125]": 124.70425932434703,
+     "dirty_from_z[-0.0125]": 124.70425932434703,
+     "clean_from_z[-0.0125]": 124.63759265768037,
+     "pv_z[0.0]": 112.42525015078385,
+     "dirty_from_z[0.0]": 112.42525015078385,
+     "clean_from_z[0.0]": 112.35858348411719,
+     "pv_z[0.0075]": 105.76920963436761,
+     "dirty_from_z[0.0075]": 105.76920963436761,
+     "clean_from_z[0.0075]": 105.70254296770095
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 17th, 2015 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 76.70388644111138,
+     "settlement_value": 76.70919773322923,
+     "dirty_price": 76.70919773322923,
+     "clean_price": 76.70919773322923,
+     "market_value": 76.70388644111138,
+     "npv_base": 76.70388644111138
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 76.70388644111138,
+     "pv_base[1]": 76.70919773322923
+    },
+    "z": {
+     "pv_z[-0.0125]": 86.69782909120921,
+     "dirty_from_z[-0.0125]": 86.69782909120923,
+     "clean_from_z[-0.0125]": 86.69782909120923,
+     "pv_z[0.0]": 76.70919773322923,
+     "dirty_from_z[0.0]": 76.70919773322923,
+     "clean_from_z[0.0]": 76.70919773322923,
+     "pv_z[0.0075]": 71.32810897575087,
+     "dirty_from_z[0.0075]": 71.32810897575087,
+     "clean_from_z[0.0075]": 71.32810897575087
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.6111111111111178,
+     "accrued_cash": 6.111111111111178,
+     "npv": 986.1873619210879,
+     "settlement_value": 986.2600112946711,
+     "dirty_price": 98.62600112946711,
+     "clean_price": 98.014890018356,
+     "market_value": 986.1873619210879,
+     "npv_base": 1029.054966761236
+    },
+    "role": {
+     "first_live[0]": 30,
+     "first_live[1]": 30,
+     "first_live[2]": 30,
+     "pv_base[0]": 1029.054966761236,
+     "pv_base[1]": 1029.0832836869347,
+     "pv_sprd[0]": 986.1873619210879,
+     "pv_sprd[1]": 986.2600112946711,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999263385184929
+    },
+    "z": {
+     "pv_z[-0.0125]": 1096.3465930092864,
+     "dirty_from_z[-0.0125]": 109.63465930092865,
+     "clean_from_z[-0.0125]": 109.02354818981753,
+     "pv_z[0.0]": 1029.0832836869345,
+     "dirty_from_z[0.0]": 102.90832836869345,
+     "clean_from_z[0.0]": 102.29721725758233,
+     "pv_z[0.0075]": 991.1813793090203,
+     "dirty_from_z[0.0075]": 99.11813793090202,
+     "clean_from_z[0.0075]": 98.50702681979091
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42263,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.035,
+     "accrued_amount": 2.375342465753416,
+     "accrued_cash": 2.375342465753416,
+     "npv": 87.20675654099192,
+     "settlement_value": 87.20675654099192,
+     "dirty_price": 87.20675654099192,
+     "clean_price": 84.8314140752385,
+     "market_value": 87.20675654099192,
+     "npv_base": 107.01949664761405
+    },
+    "role": {
+     "first_live[0]": 54,
+     "first_live[1]": 54,
+     "first_live[2]": 54,
+     "pv_base[0]": 107.01949664761405,
+     "pv_base[1]": 107.01949664761405,
+     "pv_sprd[0]": 87.20675654099192,
+     "pv_sprd[1]": 87.20675654099192,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 115.42129990614816,
+     "dirty_from_z[-0.0125]": 115.42129990614816,
+     "clean_from_z[-0.0125]": 113.04595744039474,
+     "pv_z[0.0]": 107.01949664761402,
+     "dirty_from_z[0.0]": 107.01949664761402,
+     "clean_from_z[0.0]": 104.6441541818606,
+     "pv_z[0.0075]": 102.3391355101228,
+     "dirty_from_z[0.0075]": 102.3391355101228,
+     "clean_from_z[0.0075]": 99.96379304436938
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42264,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.12986111111110699,
+     "accrued_cash": 0.12986111111110699,
+     "npv": 102.99109284700643,
+     "settlement_value": 102.99250677739683,
+     "dirty_price": 102.99250677739683,
+     "clean_price": 102.86264566628572,
+     "market_value": 102.99109284700643,
+     "npv_base": 102.99109284700643
+    },
+    "role": {
+     "first_live[0]": 67,
+     "first_live[1]": 67,
+     "first_live[2]": 67,
+     "pv_base[0]": 102.99109284700643,
+     "pv_base[1]": 102.99250677739683
+    },
+    "z": {
+     "pv_z[-0.0125]": 111.97529994052557,
+     "dirty_from_z[-0.0125]": 111.97529994052556,
+     "clean_from_z[-0.0125]": 111.84543882941445,
+     "pv_z[0.0]": 102.99250677739677,
+     "dirty_from_z[0.0]": 102.99250677739677,
+     "clean_from_z[0.0]": 102.86264566628566,
+     "pv_z[0.0075]": 98.01995746179803,
+     "dirty_from_z[0.0075]": 98.01995746179801,
+     "clean_from_z[0.0075]": 97.8900963506869
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.491666666666668,
+     "accrued_cash": 0.49166666666666803,
+     "npv": 83.51483232963753,
+     "settlement_value": 83.52098460910076,
+     "dirty_price": 83.52098460910076,
+     "clean_price": 83.02931794243409,
+     "market_value": 83.51483232963753,
+     "npv_base": 90.24192966575372
+    },
+    "role": {
+     "first_live[0]": 83,
+     "first_live[1]": 83,
+     "first_live[2]": 83,
+     "pv_base[0]": 90.24192966575372,
+     "pv_base[1]": 90.24441288977944,
+     "pv_sprd[0]": 83.51483232963753,
+     "pv_sprd[1]": 83.52098460910076,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999263385184929
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.30464628810778,
+     "dirty_from_z[-0.0125]": 101.30464628810778,
+     "clean_from_z[-0.0125]": 100.8129796214411,
+     "pv_z[0.0]": 90.2444128897795,
+     "dirty_from_z[0.0]": 90.24441288977951,
+     "clean_from_z[0.0]": 89.75274622311284,
+     "pv_z[0.0075]": 84.28101477666506,
+     "dirty_from_z[0.0075]": 84.28101477666505,
+     "clean_from_z[0.0075]": 83.78934810999837
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42536,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.035,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 69.25800783233663,
+     "settlement_value": 71.47439732576235,
+     "dirty_price": 71.47439732576235,
+     "clean_price": 71.47439732576235,
+     "market_value": 69.25800783233663,
+     "npv_base": 96.16540685778996
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 96.16540685778996,
+     "pv_base[1]": 96.74135725051622,
+     "pv_sprd[0]": 69.25800783233663,
+     "pv_sprd[1]": 71.47439732576235,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9689904416636915
+    },
+    "z": {
+     "pv_z[-0.0125]": 108.18917724493947,
+     "dirty_from_z[-0.0125]": 108.18917724493947,
+     "clean_from_z[-0.0125]": 108.18917724493947,
+     "pv_z[0.0]": 96.74135725051632,
+     "dirty_from_z[0.0]": 96.74135725051632,
+     "clean_from_z[0.0]": 96.74135725051632,
+     "pv_z[0.0075]": 90.5485320712293,
+     "dirty_from_z[0.0075]": 90.54853207122932,
+     "clean_from_z[0.0075]": 90.54853207122932
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42265,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.36333333333333767,
+     "accrued_cash": 0.3633333333333377,
+     "npv": 100.65912987023458,
+     "settlement_value": 100.66189974861182,
+     "dirty_price": 100.66189974861182,
+     "clean_price": 100.29856641527847,
+     "market_value": 100.65912987023458,
+     "npv_base": 100.65912987023458
+    },
+    "role": {
+     "first_live[0]": 105,
+     "first_live[1]": 105,
+     "first_live[2]": 105,
+     "pv_base[0]": 100.65912987023458,
+     "pv_base[1]": 100.66189974861182
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.55032671165543,
+     "dirty_from_z[-0.0125]": 101.55032671165543,
+     "clean_from_z[-0.0125]": 101.18699337832209,
+     "pv_z[0.0]": 100.66189974861183,
+     "dirty_from_z[0.0]": 100.66189974861183,
+     "clean_from_z[0.0]": 100.29856641527849,
+     "pv_z[0.0075]": 100.13780183293697,
+     "dirty_from_z[0.0075]": 100.13780183293697,
+     "clean_from_z[0.0075]": 99.77446849960363
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42268,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0085,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 96.11577848865744,
+     "settlement_value": 96.13352366204602,
+     "dirty_price": 96.133523662046,
+     "clean_price": 96.01685699537933,
+     "market_value": 96.11577848865744,
+     "npv_base": 99.95894976782029
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 99.95894976782029,
+     "pv_base[1]": 99.96587133603076,
+     "pv_sprd[0]": 96.11577848865744,
+     "pv_sprd[1]": 96.13352366204602,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998154111831897
+    },
+    "z": {
+     "pv_z[-0.0125]": 105.95344779918172,
+     "dirty_from_z[-0.0125]": 105.95344779918172,
+     "clean_from_z[-0.0125]": 105.83678113251504,
+     "pv_z[0.0]": 99.96587133603074,
+     "dirty_from_z[0.0]": 99.96587133603074,
+     "clean_from_z[0.0]": 99.84920466936407,
+     "pv_z[0.0075]": 96.57478333544363,
+     "dirty_from_z[0.0075]": 96.57478333544363,
+     "clean_from_z[0.0075]": 96.45811666877695
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42263,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 99.44667376290295,
+     "settlement_value": 99.44667376290295,
+     "dirty_price": 99.44667376290293,
+     "clean_price": 99.44393403687553,
+     "market_value": 99.44667376290295,
+     "npv_base": 99.44667376290295
+    },
+    "role": {
+     "first_live[0]": 130,
+     "first_live[1]": 130,
+     "first_live[2]": 130,
+     "pv_base[0]": 99.44667376290295,
+     "pv_base[1]": 99.44667376290295
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.70846824402831,
+     "dirty_from_z[-0.0125]": 101.70846824402832,
+     "clean_from_z[-0.0125]": 101.70572851800092,
+     "pv_z[0.0]": 99.44667376290295,
+     "dirty_from_z[0.0]": 99.44667376290293,
+     "clean_from_z[0.0]": 99.44393403687553,
+     "pv_z[0.0075]": 98.12697661548145,
+     "dirty_from_z[0.0075]": 98.12697661548145,
+     "clean_from_z[0.0075]": 98.12423688945405
+    }
+   }
+  },
+  "2,1": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 111.21862788129111,
+     "settlement_value": 111.22781091808714,
+     "dirty_price": 111.22781091808714,
+     "clean_price": 111.16114425142048,
+     "market_value": 111.21862788129111,
+     "npv_base": 111.21862788129111
+    },
+    "role": {
+     "first_live[0]": 1,
+     "first_live[1]": 1,
+     "first_live[2]": 1,
+     "pv_base[0]": 111.21862788129111,
+     "pv_base[1]": 111.22781091808714
+    },
+    "z": {
+     "pv_z[-0.0125]": 123.0615336565453,
+     "dirty_from_z[-0.0125]": 123.0615336565453,
+     "clean_from_z[-0.0125]": 122.99486698987863,
+     "pv_z[0.0]": 111.22781091808716,
+     "dirty_from_z[0.0]": 111.22781091808716,
+     "clean_from_z[0.0]": 111.1611442514205,
+     "pv_z[0.0075]": 104.73572200833593,
+     "dirty_from_z[0.0075]": 104.73572200833593,
+     "clean_from_z[0.0075]": 104.66905534166926
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at March 17th, 2016 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 77.10619092210736,
+     "settlement_value": 77.11255738249199,
+     "dirty_price": 77.11255738249199,
+     "clean_price": 77.11255738249199,
+     "market_value": 77.10619092210736,
+     "npv_base": 77.10619092210736
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 77.10619092210736,
+     "pv_base[1]": 77.11255738249199
+    },
+    "z": {
+     "pv_z[-0.0125]": 86.8310927398383,
+     "dirty_from_z[-0.0125]": 86.8310927398383,
+     "clean_from_z[-0.0125]": 86.8310927398383,
+     "pv_z[0.0]": 77.11255738249199,
+     "dirty_from_z[0.0]": 77.11255738249199,
+     "clean_from_z[0.0]": 77.11255738249199,
+     "pv_z[0.0075]": 71.81166733775993,
+     "dirty_from_z[0.0075]": 71.81166733775993,
+     "clean_from_z[0.0075]": 71.81166733775993
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 0.6111111111111178,
+     "accrued_cash": 6.111111111111178,
+     "npv": 989.6291991283381,
+     "settlement_value": 989.7106008038044,
+     "dirty_price": 98.97106008038044,
+     "clean_price": 98.35994896926933,
+     "market_value": 989.6291991283381,
+     "npv_base": 1032.3755337163177
+    },
+    "role": {
+     "first_live[0]": 32,
+     "first_live[1]": 32,
+     "first_live[2]": 32,
+     "pv_base[0]": 1032.3755337163177,
+     "pv_base[1]": 1032.4095368772448,
+     "pv_sprd[0]": 989.6291991283381,
+     "pv_sprd[1]": 989.7106008038044,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999177520424656
+    },
+    "z": {
+     "pv_z[-0.0125]": 1094.9315949092138,
+     "dirty_from_z[-0.0125]": 109.49315949092137,
+     "clean_from_z[-0.0125]": 108.88204837981026,
+     "pv_z[0.0]": 1032.4095368772448,
+     "dirty_from_z[0.0]": 103.24095368772448,
+     "clean_from_z[0.0]": 102.62984257661337,
+     "pv_z[0.0075]": 996.6967906197775,
+     "dirty_from_z[0.0075]": 99.66967906197775,
+     "clean_from_z[0.0075]": 99.05856795086663
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42445,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.036,
+     "accrued_amount": 3.8712328767123383,
+     "accrued_cash": 3.8712328767123383,
+     "npv": 88.57275761126891,
+     "settlement_value": 88.57275761126891,
+     "dirty_price": 88.57275761126891,
+     "clean_price": 84.70152473455657,
+     "market_value": 88.57275761126891,
+     "npv_base": 108.28480650443746
+    },
+    "role": {
+     "first_live[0]": 54,
+     "first_live[1]": 54,
+     "first_live[2]": 54,
+     "pv_base[0]": 108.28480650443746,
+     "pv_base[1]": 108.28480650443746,
+     "pv_sprd[0]": 88.57275761126891,
+     "pv_sprd[1]": 88.57275761126891,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 116.20475701685629,
+     "dirty_from_z[-0.0125]": 116.20475701685629,
+     "clean_from_z[-0.0125]": 112.33352414014395,
+     "pv_z[0.0]": 108.28480650443747,
+     "dirty_from_z[0.0]": 108.28480650443747,
+     "clean_from_z[0.0]": 104.41357362772513,
+     "pv_z[0.0075]": 103.81459217534388,
+     "dirty_from_z[0.0075]": 103.81459217534388,
+     "clean_from_z[0.0075]": 99.94335929863153
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42446,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.12986111111110699,
+     "accrued_cash": 0.12986111111110699,
+     "npv": 102.569077685283,
+     "settlement_value": 102.57076529343135,
+     "dirty_price": 102.57076529343136,
+     "clean_price": 102.44090418232025,
+     "market_value": 102.569077685283,
+     "npv_base": 102.569077685283
+    },
+    "role": {
+     "first_live[0]": 68,
+     "first_live[1]": 68,
+     "first_live[2]": 68,
+     "pv_base[0]": 102.569077685283,
+     "pv_base[1]": 102.57076529343135
+    },
+    "z": {
+     "pv_z[-0.0125]": 111.09374965719697,
+     "dirty_from_z[-0.0125]": 111.09374965719697,
+     "clean_from_z[-0.0125]": 110.96388854608585,
+     "pv_z[0.0]": 102.57076529343135,
+     "dirty_from_z[0.0]": 102.57076529343136,
+     "clean_from_z[0.0]": 102.44090418232025,
+     "pv_z[0.0075]": 97.79103827168025,
+     "dirty_from_z[0.0075]": 97.79103827168025,
+     "clean_from_z[0.0075]": 97.66117716056914
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 1.2416666666666742,
+     "accrued_cash": 1.2416666666666742,
+     "npv": 83.70097585860607,
+     "settlement_value": 83.70786065917487,
+     "dirty_price": 83.70786065917487,
+     "clean_price": 82.4661939925082,
+     "market_value": 83.70097585860607,
+     "npv_base": 90.67239238577525
+    },
+    "role": {
+     "first_live[0]": 83,
+     "first_live[1]": 83,
+     "first_live[2]": 83,
+     "pv_base[0]": 90.67239238577525,
+     "pv_base[1]": 90.67537884549776,
+     "pv_sprd[0]": 83.70097585860607,
+     "pv_sprd[1]": 83.70786065917487,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999177520424656
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.38860064827497,
+     "dirty_from_z[-0.0125]": 101.38860064827497,
+     "clean_from_z[-0.0125]": 100.1469339816083,
+     "pv_z[0.0]": 90.67537884549775,
+     "dirty_from_z[0.0]": 90.67537884549775,
+     "clean_from_z[0.0]": 89.43371217883107,
+     "pv_z[0.0075]": 84.82844877498748,
+     "dirty_from_z[0.0075]": 84.82844877498748,
+     "clean_from_z[0.0075]": 83.5867821083208
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42536,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.036,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 69.03988558515961,
+     "settlement_value": 69.77521948205877,
+     "dirty_price": 69.77521948205877,
+     "clean_price": 69.77521948205877,
+     "market_value": 69.03988558515961,
+     "npv_base": 96.41115412305544
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 96.41115412305544,
+     "pv_base[1]": 96.56738883917726,
+     "pv_sprd[0]": 69.03988558515961,
+     "pv_sprd[1]": 69.77521948205877,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9894613889808224
+    },
+    "z": {
+     "pv_z[-0.0125]": 108.24929589177,
+     "dirty_from_z[-0.0125]": 108.24929589177,
+     "clean_from_z[-0.0125]": 108.24929589177,
+     "pv_z[0.0]": 96.56738883917727,
+     "dirty_from_z[0.0]": 96.56738883917727,
+     "clean_from_z[0.0]": 96.56738883917727,
+     "pv_z[0.0075]": 90.20141440282136,
+     "dirty_from_z[0.0075]": 90.20141440282136,
+     "clean_from_z[0.0075]": 90.20141440282136
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42447,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.9700000000000043,
+     "accrued_cash": 0.9700000000000042,
+     "npv": 101.08303731020598,
+     "settlement_value": 101.08636666340394,
+     "dirty_price": 101.08636666340394,
+     "clean_price": 100.11636666340394,
+     "market_value": 101.08303731020598,
+     "npv_base": 101.08303731020598
+    },
+    "role": {
+     "first_live[0]": 105,
+     "first_live[1]": 105,
+     "first_live[2]": 105,
+     "pv_base[0]": 101.08303731020598,
+     "pv_base[1]": 101.08636666340394
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.34634003078952,
+     "dirty_from_z[-0.0125]": 101.34634003078952,
+     "clean_from_z[-0.0125]": 100.37634003078952,
+     "pv_z[0.0]": 101.08636666340392,
+     "dirty_from_z[0.0]": 101.08636666340391,
+     "clean_from_z[0.0]": 100.11636666340391,
+     "pv_z[0.0075]": 100.93070285639718,
+     "dirty_from_z[0.0075]": 100.93070285639719,
+     "clean_from_z[0.0075]": 99.96070285639719
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42450,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.009,
+     "accrued_amount": 0.12222222222222356,
+     "accrued_cash": 0.12222222222222356,
+     "npv": 96.91239570155241,
+     "settlement_value": 96.93234733617894,
+     "dirty_price": 96.93234733617894,
+     "clean_price": 96.81012511395672,
+     "market_value": 96.91239570155241,
+     "npv_base": 100.71278768784683
+    },
+    "role": {
+     "first_live[0]": 109,
+     "first_live[1]": 109,
+     "first_live[2]": 109,
+     "pv_base[0]": 100.71278768784683,
+     "pv_base[1]": 100.72110328436861,
+     "pv_sprd[0]": 96.91239570155241,
+     "pv_sprd[1]": 96.93234733617894,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997941694885678
+    },
+    "z": {
+     "pv_z[-0.0125]": 106.23748615053894,
+     "dirty_from_z[-0.0125]": 106.23748615053893,
+     "clean_from_z[-0.0125]": 106.11526392831671,
+     "pv_z[0.0]": 100.72110328436862,
+     "dirty_from_z[0.0]": 100.72110328436862,
+     "clean_from_z[0.0]": 100.5988810621464,
+     "pv_z[0.0075]": 97.55347511403065,
+     "dirty_from_z[0.0075]": 97.55347511403065,
+     "clean_from_z[0.0075]": 97.43125289180843
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42445,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 100.00528842533714,
+     "settlement_value": 100.00528842533714,
+     "dirty_price": 100.00528842533714,
+     "clean_price": 100.00254869930974,
+     "market_value": 100.00528842533714,
+     "npv_base": 100.00528842533714
+    },
+    "role": {
+     "first_live[0]": 136,
+     "first_live[1]": 136,
+     "first_live[2]": 136,
+     "pv_base[0]": 100.00528842533714,
+     "pv_base[1]": 100.00528842533714
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.66974015333534,
+     "dirty_from_z[-0.0125]": 101.66974015333534,
+     "clean_from_z[-0.0125]": 101.66700042730794,
+     "pv_z[0.0]": 100.00528842533713,
+     "dirty_from_z[0.0]": 100.00528842533713,
+     "clean_from_z[0.0]": 100.00254869930973,
+     "pv_z[0.0075]": 99.01977793153809,
+     "dirty_from_z[0.0075]": 99.01977793153809,
+     "clean_from_z[0.0075]": 99.01703820551069
+    }
+   }
+  },
+  "2,2": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 117.68336076254187,
+     "settlement_value": 117.68667432797662,
+     "dirty_price": 117.68667432797662,
+     "clean_price": 117.62000766130996,
+     "market_value": 117.68336076254187,
+     "npv_base": 117.68336076254187
+    },
+    "role": {
+     "first_live[0]": 2,
+     "first_live[1]": 2,
+     "first_live[2]": 2,
+     "pv_base[0]": 117.68336076254187,
+     "pv_base[1]": 117.68667432797662
+    },
+    "z": {
+     "pv_z[-0.0125]": 128.4923802535202,
+     "dirty_from_z[-0.0125]": 128.4923802535202,
+     "clean_from_z[-0.0125]": 128.42571358685353,
+     "pv_z[0.0]": 117.68667432797662,
+     "dirty_from_z[0.0]": 117.68667432797662,
+     "clean_from_z[0.0]": 117.62000766130996,
+     "pv_z[0.0075]": 112.09643121873383,
+     "dirty_from_z[0.0075]": 112.09643121873383,
+     "clean_from_z[0.0075]": 112.02976455206716
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2016 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 83.99653595770964,
+     "settlement_value": 83.9989010160865,
+     "dirty_price": 83.9989010160865,
+     "clean_price": 83.9989010160865,
+     "market_value": 83.99653595770964,
+     "npv_base": 83.99653595770964
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 83.99653595770964,
+     "pv_base[1]": 83.9989010160865
+    },
+    "z": {
+     "pv_z[-0.0125]": 92.88932835614527,
+     "dirty_from_z[-0.0125]": 92.88932835614527,
+     "clean_from_z[-0.0125]": 92.88932835614527,
+     "pv_z[0.0]": 83.9989010160865,
+     "dirty_from_z[0.0]": 83.9989010160865,
+     "clean_from_z[0.0]": 83.9989010160865,
+     "pv_z[0.0075]": 79.43834679139981,
+     "dirty_from_z[0.0075]": 79.43834679139981,
+     "clean_from_z[0.0075]": 79.43834679139981
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0095,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 1028.9389260191324,
+     "settlement_value": 1022.6817621324907,
+     "dirty_price": 102.26817621324906,
+     "clean_price": 102.26817621324906,
+     "market_value": 1028.9389260191324,
+     "npv_base": 1069.106700310575
+    },
+    "role": {
+     "first_live[0]": 34,
+     "first_live[1]": 35,
+     "first_live[2]": 34,
+     "pv_base[0]": 1069.106700310575,
+     "pv_base[1]": 1062.7418285601043,
+     "pv_sprd[0]": 1028.9389260191324,
+     "pv_sprd[1]": 1022.6817621324907,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998719961529207
+    },
+    "z": {
+     "pv_z[-0.0125]": 1120.6876013666295,
+     "dirty_from_z[-0.0125]": 112.06876013666295,
+     "clean_from_z[-0.0125]": 112.06876013666295,
+     "pv_z[0.0]": 1062.7418285601043,
+     "dirty_from_z[0.0]": 106.27418285601043,
+     "clean_from_z[0.0]": 106.27418285601043,
+     "pv_z[0.0075]": 1030.8537561283756,
+     "dirty_from_z[0.0075]": 103.08537561283755,
+     "clean_from_z[0.0075]": 103.08537561283755
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42629,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.037,
+     "accrued_amount": 0.6410958904109698,
+     "accrued_cash": 0.6410958904109698,
+     "npv": 92.55642488095387,
+     "settlement_value": 92.55642488095387,
+     "dirty_price": 92.55642488095387,
+     "clean_price": 91.9153289905429,
+     "market_value": 92.55642488095387,
+     "npv_base": 109.74891296534132
+    },
+    "role": {
+     "first_live[0]": 55,
+     "first_live[1]": 55,
+     "first_live[2]": 55,
+     "pv_base[0]": 109.74891296534132,
+     "pv_base[1]": 109.74891296534132,
+     "pv_sprd[0]": 92.55642488095387,
+     "pv_sprd[1]": 92.55642488095387,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 117.17808755723289,
+     "dirty_from_z[-0.0125]": 117.17808755723289,
+     "clean_from_z[-0.0125]": 116.53699166682192,
+     "pv_z[0.0]": 109.7489129653413,
+     "dirty_from_z[0.0]": 109.74891296534129,
+     "clean_from_z[0.0]": 109.10781707493032,
+     "pv_z[0.0075]": 105.74387510945499,
+     "dirty_from_z[0.0075]": 105.74387510945499,
+     "clean_from_z[0.0075]": 105.10277921904402
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42632,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.14513888888889603,
+     "accrued_cash": 0.14513888888889603,
+     "npv": 107.8635668032172,
+     "settlement_value": 107.86537923986647,
+     "dirty_price": 107.86537923986647,
+     "clean_price": 107.72024035097758,
+     "market_value": 107.8635668032172,
+     "npv_base": 107.8635668032172
+    },
+    "role": {
+     "first_live[0]": 69,
+     "first_live[1]": 69,
+     "first_live[2]": 69,
+     "pv_base[0]": 107.8635668032172,
+     "pv_base[1]": 107.86537923986647
+    },
+    "z": {
+     "pv_z[-0.0125]": 115.86437600031103,
+     "dirty_from_z[-0.0125]": 115.86437600031103,
+     "clean_from_z[-0.0125]": 115.71923711142213,
+     "pv_z[0.0]": 107.86537923986646,
+     "dirty_from_z[0.0]": 107.86537923986646,
+     "clean_from_z[0.0]": 107.72024035097756,
+     "pv_z[0.0075]": 103.59710419463381,
+     "dirty_from_z[0.0075]": 103.59710419463381,
+     "clean_from_z[0.0075]": 103.45196530574492
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0095,
+     "accrued_amount": 0.49999999999998934,
+     "accrued_cash": 0.49999999999998934,
+     "npv": 90.52501764176799,
+     "settlement_value": 90.53660667572399,
+     "dirty_price": 90.536606675724,
+     "clean_price": 90.03660667572402,
+     "market_value": 90.52501764176799,
+     "npv_base": 96.79929287423516
+    },
+    "role": {
+     "first_live[0]": 84,
+     "first_live[1]": 84,
+     "first_live[2]": 84,
+     "pv_base[0]": 96.79929287423516,
+     "pv_base[1]": 96.80146743923889,
+     "pv_sprd[0]": 90.52501764176799,
+     "pv_sprd[1]": 90.53660667572399,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998719961529207
+    },
+    "z": {
+     "pv_z[-0.0125]": 106.56859043278777,
+     "dirty_from_z[-0.0125]": 106.56859043278777,
+     "clean_from_z[-0.0125]": 106.06859043278779,
+     "pv_z[0.0]": 96.80146743923889,
+     "dirty_from_z[0.0]": 96.80146743923889,
+     "clean_from_z[0.0]": 96.3014674392389,
+     "pv_z[0.0075]": 91.78448455489404,
+     "dirty_from_z[0.0075]": 91.78448455489405,
+     "clean_from_z[0.0075]": 91.28448455489406
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.037,
+     "accrued_amount": 0.26388888888888573,
+     "accrued_cash": 0.26388888888888573,
+     "npv": 82.32287662530118,
+     "settlement_value": 82.3585698315458,
+     "dirty_price": 82.3585698315458,
+     "clean_price": 82.09468094265691,
+     "market_value": 82.32287662530118,
+     "npv_base": 104.89688103600798
+    },
+    "role": {
+     "first_live[0]": 94,
+     "first_live[1]": 94,
+     "first_live[2]": 94,
+     "pv_base[0]": 104.89688103600798,
+     "pv_base[1]": 104.89923751072726,
+     "pv_sprd[0]": 82.32287662530118,
+     "pv_sprd[1]": 82.3585698315458,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9995666121167763
+    },
+    "z": {
+     "pv_z[-0.0125]": 115.76789415400668,
+     "dirty_from_z[-0.0125]": 115.76789415400668,
+     "clean_from_z[-0.0125]": 115.5040052651178,
+     "pv_z[0.0]": 104.89923751072725,
+     "dirty_from_z[0.0]": 104.89923751072725,
+     "clean_from_z[0.0]": 104.63534862183836,
+     "pv_z[0.0075]": 99.3407761709582,
+     "dirty_from_z[0.0075]": 99.3407761709582,
+     "clean_from_z[0.0075]": 99.07688728206931
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42633,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2016 (maturity being June 1st, 2016)"
+     }
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42634,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.0095,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 100.42778172751801,
+     "settlement_value": 100.44386032207223,
+     "dirty_price": 100.44386032207223,
+     "clean_price": 100.32719365540555,
+     "market_value": 100.42778172751801,
+     "npv_base": 103.97435804283397
+    },
+    "role": {
+     "first_live[0]": 111,
+     "first_live[1]": 111,
+     "first_live[2]": 111,
+     "pv_base[0]": 103.97435804283397,
+     "pv_base[1]": 103.9772856091159,
+     "pv_sprd[0]": 100.42778172751801,
+     "pv_sprd[1]": 100.44386032207223,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9998399245657956
+    },
+    "z": {
+     "pv_z[-0.0125]": 109.03550882282259,
+     "dirty_from_z[-0.0125]": 109.03550882282259,
+     "clean_from_z[-0.0125]": 108.91884215615592,
+     "pv_z[0.0]": 103.9772856091159,
+     "dirty_from_z[0.0]": 103.9772856091159,
+     "clean_from_z[0.0]": 103.86061894244922,
+     "pv_z[0.0075]": 101.16709322292166,
+     "dirty_from_z[0.0075]": 101.16709322292166,
+     "clean_from_z[0.0075]": 101.05042655625499
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42629,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0027397260274009128,
+     "accrued_cash": 0.0027397260274009128,
+     "npv": 100.5222948117161,
+     "settlement_value": 100.5222948117161,
+     "dirty_price": 100.5222948117161,
+     "clean_price": 100.5195550856887,
+     "market_value": 100.5222948117161,
+     "npv_base": 100.5222948117161
+    },
+    "role": {
+     "first_live[0]": 142,
+     "first_live[1]": 142,
+     "first_live[2]": 142,
+     "pv_base[0]": 100.5222948117161,
+     "pv_base[1]": 100.5222948117161
+    },
+    "z": {
+     "pv_z[-0.0125]": 101.57678937691011,
+     "dirty_from_z[-0.0125]": 101.57678937691011,
+     "clean_from_z[-0.0125]": 101.57404965088271,
+     "pv_z[0.0]": 100.52229481171608,
+     "dirty_from_z[0.0]": 100.52229481171608,
+     "clean_from_z[0.0]": 100.51955508568868,
+     "pv_z[0.0075]": 99.90006634634977,
+     "dirty_from_z[0.0075]": 99.90006634634977,
+     "clean_from_z[0.0075]": 99.89732662032237
+    }
+   }
+  },
+  "2,3": {
+   "HEADLINE_10Y": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.06666666666665932,
+     "accrued_cash": 0.06666666666665932,
+     "npv": 109.79192722371502,
+     "settlement_value": 109.79913276251143,
+     "dirty_price": 109.79913276251143,
+     "clean_price": 109.73246609584477,
+     "market_value": 109.79192722371502,
+     "npv_base": 109.79192722371502
+    },
+    "role": {
+     "first_live[0]": 4,
+     "first_live[1]": 4,
+     "first_live[2]": 4,
+     "pv_base[0]": 109.79192722371502,
+     "pv_base[1]": 109.79913276251143
+    },
+    "z": {
+     "pv_z[-0.0125]": 119.80619571263757,
+     "dirty_from_z[-0.0125]": 119.80619571263759,
+     "clean_from_z[-0.0125]": 119.73952904597093,
+     "pv_z[0.0]": 109.79913276251143,
+     "dirty_from_z[0.0]": 109.79913276251143,
+     "clean_from_z[0.0]": 109.73246609584477,
+     "pv_z[0.0075]": 104.23470059661622,
+     "dirty_from_z[0.0075]": 104.23470059661622,
+     "clean_from_z[0.0075]": 104.16803392994956
+    }
+   },
+   "ZCB_2008": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 22,
+     "first_live[1]": 22,
+     "first_live[2]": 22,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2008)"
+     }
+    }
+   },
+   "ZCB_2007": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 23,
+     "first_live[1]": 23,
+     "first_live[2]": 23,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2007)"
+     }
+    }
+   },
+   "ZCB_2006": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 19th, 2017 (maturity being November 30th, 2006)"
+     }
+    }
+   },
+   "ZCB_10Y": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 80.60082777519877,
+     "settlement_value": 80.60611753015839,
+     "dirty_price": 80.60611753015839,
+     "clean_price": 80.60611753015839,
+     "market_value": 80.60082777519877,
+     "npv_base": 80.60082777519877
+    },
+    "role": {
+     "first_live[0]": 24,
+     "first_live[1]": 24,
+     "first_live[2]": 24,
+     "pv_base[0]": 80.60082777519877,
+     "pv_base[1]": 80.60611753015839
+    },
+    "z": {
+     "pv_z[-0.0125]": 89.07438496528505,
+     "dirty_from_z[-0.0125]": 89.07438496528505,
+     "clean_from_z[-0.0125]": 89.07438496528505,
+     "pv_z[0.0]": 80.60611753015839,
+     "dirty_from_z[0.0]": 80.60611753015839,
+     "clean_from_z[0.0]": 80.60611753015839,
+     "pv_z[0.0075]": 75.91666232984268,
+     "dirty_from_z[0.0075]": 75.91666232984268,
+     "clean_from_z[0.0075]": 75.91666232984268
+    }
+   },
+   "USD_Q_ACT360": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 1000.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.01,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 997.2352203855783,
+     "settlement_value": 990.9445797219781,
+     "dirty_price": 99.0944579721978,
+     "clean_price": 99.0944579721978,
+     "market_value": 997.2352203855783,
+     "npv_base": 1031.1899349530872
+    },
+    "role": {
+     "first_live[0]": 38,
+     "first_live[1]": 39,
+     "first_live[2]": 38,
+     "pv_base[0]": 1031.1899349530872,
+     "pv_base[1]": 1024.846131952105,
+     "pv_sprd[0]": 997.2352203855783,
+     "pv_sprd[1]": 990.9445797219781,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999014890922836
+    },
+    "z": {
+     "pv_z[-0.0125]": 1068.9029037293128,
+     "dirty_from_z[-0.0125]": 106.89029037293128,
+     "clean_from_z[-0.0125]": 106.89029037293128,
+     "pv_z[0.0]": 1024.8461319521048,
+     "dirty_from_z[0.0]": 102.48461319521047,
+     "clean_from_z[0.0]": 102.48461319521047,
+     "pv_z[0.0075]": 999.3105570252599,
+     "dirty_from_z[0.0075]": 99.931055702526,
+     "clean_from_z[0.0075]": 99.931055702526
+    }
+   },
+   "NULL_A365F_LONGFIRST": {
+    "bond": {
+     "settle": 42996,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.038,
+     "accrued_amount": 0.6575342465753531,
+     "accrued_cash": 0.6575342465753531,
+     "npv": 88.22386478665898,
+     "settlement_value": 88.22386478665898,
+     "dirty_price": 88.22386478665898,
+     "clean_price": 87.56633054008363,
+     "market_value": 88.22386478665898,
+     "npv_base": 104.63241387658039
+    },
+    "role": {
+     "first_live[0]": 56,
+     "first_live[1]": 56,
+     "first_live[2]": 56,
+     "pv_base[0]": 104.63241387658039,
+     "pv_base[1]": 104.63241387658039,
+     "pv_sprd[0]": 88.22386478665898,
+     "pv_sprd[1]": 88.22386478665898,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 1.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 110.69867153792721,
+     "dirty_from_z[-0.0125]": 110.6986715379272,
+     "clean_from_z[-0.0125]": 110.04113729135184,
+     "pv_z[0.0]": 104.63241387658039,
+     "dirty_from_z[0.0]": 104.6324138765804,
+     "clean_from_z[0.0]": 103.97487963000505,
+     "pv_z[0.0075]": 101.15920406195976,
+     "dirty_from_z[0.0075]": 101.15920406195976,
+     "clean_from_z[0.0075]": 100.5016698153844
+    }
+   },
+   "USGOV_30360USA_EOM": {
+    "bond": {
+     "settle": 42997,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": false,
+     "accrued_amount": 0.14513888888889603,
+     "accrued_cash": 0.14513888888889603,
+     "npv": 102.68027241013294,
+     "settlement_value": 102.68251554790324,
+     "dirty_price": 102.68251554790324,
+     "clean_price": 102.53737665901434,
+     "market_value": 102.68027241013294,
+     "npv_base": 102.68027241013294
+    },
+    "role": {
+     "first_live[0]": 71,
+     "first_live[1]": 71,
+     "first_live[2]": 71,
+     "pv_base[0]": 102.68027241013294,
+     "pv_base[1]": 102.68251554790324
+    },
+    "z": {
+     "pv_z[-0.0125]": 109.4385624751893,
+     "dirty_from_z[-0.0125]": 109.4385624751893,
+     "clean_from_z[-0.0125]": 109.2934235863004,
+     "pv_z[0.0]": 102.68251554790325,
+     "dirty_from_z[0.0]": 102.68251554790326,
+     "clean_from_z[0.0]": 102.53737665901437,
+     "pv_z[0.0075]": 98.83909133181272,
+     "dirty_from_z[0.0075]": 98.83909133181272,
+     "clean_from_z[0.0075]": 98.69395244292383
+    }
+   },
+   "EUR_30360EU_LONGLAST": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.01,
+     "accrued_amount": 0.491666666666668,
+     "accrued_cash": 0.49166666666666803,
+     "npv": 84.83207275352596,
+     "settlement_value": 84.84043046134175,
+     "dirty_price": 84.84043046134175,
+     "clean_price": 84.34876379467508,
+     "market_value": 84.83207275352596,
+     "npv_base": 91.5997700681435
+    },
+    "role": {
+     "first_live[0]": 85,
+     "first_live[1]": 85,
+     "first_live[2]": 85,
+     "pv_base[0]": 91.5997700681435,
+     "pv_base[1]": 91.60377501119578,
+     "pv_sprd[0]": 84.83207275352596,
+     "pv_sprd[1]": 84.84043046134175,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9999014890922836
+    },
+    "z": {
+     "pv_z[-0.0125]": 100.8556100301691,
+     "dirty_from_z[-0.0125]": 100.8556100301691,
+     "clean_from_z[-0.0125]": 100.36394336350243,
+     "pv_z[0.0]": 91.60377501119578,
+     "dirty_from_z[0.0]": 91.60377501119578,
+     "clean_from_z[0.0]": 91.1121083445291,
+     "pv_z[0.0075]": 86.48090893741703,
+     "dirty_from_z[0.0075]": 86.48090893741703,
+     "clean_from_z[0.0075]": 85.98924227075035
+    }
+   },
+   "EUR_ISMA_STEPUP_FWD": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.038,
+     "accrued_amount": 0.3958333333333286,
+     "accrued_cash": 0.3958333333333286,
+     "npv": 73.88299025234119,
+     "settlement_value": 73.9016067087918,
+     "dirty_price": 73.9016067087918,
+     "clean_price": 73.50577337545847,
+     "market_value": 73.88299025234119,
+     "npv_base": 99.62610982905059
+    },
+    "role": {
+     "first_live[0]": 95,
+     "first_live[1]": 95,
+     "first_live[2]": 95,
+     "pv_base[0]": 99.62610982905059,
+     "pv_base[1]": 99.63046570129885,
+     "pv_sprd[0]": 73.88299025234119,
+     "pv_sprd[1]": 73.9016067087918,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.9997480913165532
+    },
+    "z": {
+     "pv_z[-0.0125]": 110.04950736361236,
+     "dirty_from_z[-0.0125]": 110.04950736361235,
+     "clean_from_z[-0.0125]": 109.65367403027902,
+     "pv_z[0.0]": 99.63046570129885,
+     "dirty_from_z[0.0]": 99.63046570129886,
+     "clean_from_z[0.0]": 99.23463236796553,
+     "pv_z[0.0075]": 93.88414793739302,
+     "dirty_from_z[0.0075]": 93.88414793739302,
+     "clean_from_z[0.0075]": 93.4883146040597
+    }
+   },
+   "US_ONE_PERIOD_0D": {
+    "bond": {
+     "settle": 42998,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 107,
+     "first_live[1]": 107,
+     "first_live[2]": 107,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 20th, 2017 (maturity being June 1st, 2016)"
+     }
+    }
+   },
+   "EUROBOND_Q_EOM_USPAY": {
+    "bond": {
+     "settle": 42999,
+     "notional_s": 100.0,
+     "is_tradable": true,
+     "is_expired": false,
+     "has_spread": true,
+     "spread": 0.01,
+     "accrued_amount": 0.11666666666667602,
+     "accrued_cash": 0.11666666666667602,
+     "npv": 98.19282169654093,
+     "settlement_value": 98.2073375014242,
+     "dirty_price": 98.2073375014242,
+     "clean_price": 98.09067083475753,
+     "market_value": 98.19282169654093,
+     "npv_base": 101.0537127960162
+    },
+    "role": {
+     "first_live[0]": 115,
+     "first_live[1]": 115,
+     "first_live[2]": 115,
+     "pv_base[0]": 101.0537127960162,
+     "pv_base[1]": 101.06034485418738,
+     "pv_sprd[0]": 98.19282169654093,
+     "pv_sprd[1]": 98.2073375014242,
+     "zdisc_npv[0]": 1.0,
+     "zdisc_npv[1]": 0.999852192257192
+    },
+    "z": {
+     "pv_z[-0.0125]": 104.74562912560533,
+     "dirty_from_z[-0.0125]": 104.74562912560533,
+     "clean_from_z[-0.0125]": 104.62896245893866,
+     "pv_z[0.0]": 101.06034485418738,
+     "dirty_from_z[0.0]": 101.06034485418736,
+     "clean_from_z[0.0]": 100.94367818752069,
+     "pv_z[0.0075]": 98.91280842526729,
+     "dirty_from_z[0.0075]": 98.91280842526729,
+     "clean_from_z[0.0075]": 98.79614175860061
+    }
+   },
+   "US_1M_A365F_SIMPLEYLD": {
+    "bond": {
+     "settle": 42996,
+     "notional_s": 0.0,
+     "is_tradable": false,
+     "is_expired": true,
+     "has_spread": false,
+     "accrued_amount": 0.0,
+     "accrued_cash": 0.0,
+     "npv": 0.0,
+     "settlement_value": 0.0,
+     "dirty_price": 0.0,
+     "clean_price": 0.0,
+     "market_value": 0.0,
+     "npv_base": 0.0
+    },
+    "role": {
+     "first_live[0]": 153,
+     "first_live[1]": 153,
+     "first_live[2]": 153,
+     "pv_base[0]": 0.0,
+     "pv_base[1]": 0.0
+    },
+    "z": {
+     "pv_z[-0.0125]": 0.0,
+     "dirty_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[-0.0125]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "pv_z[0.0]": 0.0,
+     "dirty_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[0.0]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "pv_z[0.0075]": 0.0,
+     "dirty_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     },
+     "clean_from_z[0.0075]": {
+      "error": "ValueError",
+      "message": "non tradable at September 18th, 2017 (maturity being July 14th, 2017)"
+     }
+    }
+   }
+  }
+ }
+}

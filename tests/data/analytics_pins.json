@@ -1,0 +1,125 @@
+{
+ "schema": "bondportfolio-analytics-pins/1",
+ "provenance": {
+  "what_it_is": "pureql values pinned for Phase 4: (1) the quantlib-migration README headline yield 0.030250400779423203 (Bond.bondYield parity: NewtonSafe, accuracy 1e-8, the engine clean price; README.md:60-79, tests/meta/test_documentation_set.py:306-392) for the demo HEADLINE_10Y at (1, 0), with the risk measures and prices at that yield; (2) QUIRK Q-09: the stepwise npv (CashFlows.npv at an InterestRate) against the accumulated-time price behind the durations, for the input set of tests/helpers/pureql_val.py::write_q09_inputs.",
+  "generator": "tests/helpers/pureql_val.py::write_analytics_pins",
+  "oracle": "pureql (quantlib-migration src/pureql, a port of QuantLib v1.43)",
+  "quantlib_migration_head": "3cae5679a32b50d833d518aab402c13238dcff30",
+  "frozen_on": "2026-10-11",
+  "input_sha256": {
+   "bond_portfolio": {
+    "bonds.csv": "d2911edcf00d0293a9238641219dec241651eb78819f7fef37c79c15bf534a38",
+    "coupon_rates.csv": "75f6653f2ee7ed9e837d8fd55f238d5bb9993d37cc6f062da8df445c6ca03f7b",
+    "curve_nodes.csv": "525fb7b21af2b8c51336b2e692f48251c253d37245722851b7f8ad07d5ab369b",
+    "curve_params.csv": "fd04deacd6b7685ddc483854e5c9307e9e404df4157c3df88705ea746adb6174",
+    "prices.csv": "62173946ff9f17df35a03789985d36d6aadb032305fe2dbf82b82ca23043daed",
+    "spreads.csv": "50c3a7ce4a6158fac68aafb6af9468f9d1a380832e080276219ae5cd27f47f5a",
+    "valuation_dates.csv": "7e36f2c8dfd7f9a185d382e16ea21efd832f47f770e8d0a4dc0ebd2c1f774d77",
+    "yields.csv": "2890f9ca1bc9cbeffdf199cc3669b64616021056b8901ebf19e22da83a4ab5e2"
+   }
+  },
+  "tier": "exact (bitwise; DECISIONS.md D-2); fd_* are measurements (central difference, h = 1e-6)",
+  "licence": "data computed with pureql (BSD-3-Clause, derived from QuantLib); see NOTICE.md"
+ },
+ "headline": {
+  "bond_key": "HEADLINE_10Y",
+  "input_dir": "bond_portfolio",
+  "point": "1,0",
+  "settings": {
+   "yield_accuracy": 1e-08
+  },
+  "readme_literal": 0.030250400779423203,
+  "bond_bondYield": 0.030250400779423203,
+  "bond": {
+   "price_in": NaN,
+   "price_type_in": -1,
+   "yield_in": NaN,
+   "ydc": 11,
+   "ycomp": 1,
+   "yfreq": 2,
+   "y_price": 108.34563953853349,
+   "y_price_type": 1,
+   "y_target": 108.41230620520015,
+   "sign_ok": true,
+   "ytm": 0.030250400779423203,
+   "zspread": NaN,
+   "risk_yield": 0.030250400779423203,
+   "duration_simple": 8.401442875459397,
+   "duration_modified": 8.276262742993714,
+   "duration_macaulay": 8.401442875459397,
+   "convexity": 80.35946716421276,
+   "bpv": -0.08972443747505453,
+   "yvbp": -1.1145181550588439e-05,
+   "dirty_at_yield_in": NaN,
+   "clean_at_yield_in": NaN
+  },
+  "y_at_ytm": {
+   "npv_yield": 108.41230620520031,
+   "simple_duration_y": 8.401442875459397,
+   "modified_duration_y": 8.276262742993714,
+   "macaulay_duration_y": 8.401442875459397,
+   "convexity_y": 80.35946716421276,
+   "bpv_y": -0.08972443747505453,
+   "yvbp_y": -1.1145181550588439e-05,
+   "dirty_from_yield": 108.41230620520031,
+   "clean_from_yield": 108.34563953853365
+  },
+  "ytm_default_accuracy": 0.030250400779423203
+ },
+ "q09": {
+  "Q09_FRB_SIMPLE@0.03": {
+   "P_step": 108.63687717046992,
+   "P_acc": 111.71916734514392,
+   "gap": -3.082290174674,
+   "modified_duration": 6.5978287427035855,
+   "fd_log_derivative": 8.27945992491177,
+   "fd_vs_modified_rel": 0.25487645220677607,
+   "dirty_from_yield": 108.63687717046993
+  },
+  "Q09_FRB_SIMPLE@0.1": {
+   "P_step": 62.710809469629595,
+   "P_acc": 77.30432917356873,
+   "gap": -14.593519703939137,
+   "modified_duration": 4.262766851535173,
+   "fd_log_derivative": 7.405549454327282,
+   "fd_vs_modified_rel": 0.7372635455444349,
+   "dirty_from_yield": 62.710809469629595
+  },
+  "Q09_FRB_COMPOUNDED@0.03": {
+   "P_step": 108.63725134809198,
+   "P_acc": 108.6372513480919,
+   "gap": 8.526512829121202e-14,
+   "modified_duration": 8.279232641373483,
+   "fd_log_derivative": 8.27923264076965,
+   "fd_vs_modified_rel": 7.293350167334776e-11,
+   "dirty_from_yield": 108.63725134809198
+  },
+  "Q09_FRB_COMPOUNDED@0.1": {
+   "P_step": 62.71309952611398,
+   "P_acc": 62.71309952611396,
+   "gap": 2.1316282072803006e-14,
+   "modified_duration": 7.404843247849374,
+   "fd_log_derivative": 7.404843247441601,
+   "fd_vs_modified_rel": 5.5068467619999325e-11,
+   "dirty_from_yield": 62.713099526113986
+  },
+  "Q09_ZCB_SIMPLE@0.03": {
+   "P_step": 76.93280499114745,
+   "P_acc": 76.93280499114745,
+   "gap": 0.0,
+   "modified_duration": 7.689065002950846,
+   "fd_log_derivative": 7.6890650034246235,
+   "fd_vs_modified_rel": 6.161704466344563e-11,
+   "dirty_from_yield": 76.93280499114745
+  },
+  "Q09_ZCB_SIMPLE@0.1": {
+   "P_step": 50.01370238421485,
+   "P_acc": 50.01370238421485,
+   "gap": 0.0,
+   "modified_duration": 4.998629761578514,
+   "fd_log_derivative": 4.998629761591216,
+   "fd_vs_modified_rel": 2.541064288810297e-12,
+   "dirty_from_yield": 50.013702384214845
+  }
+ }
+}

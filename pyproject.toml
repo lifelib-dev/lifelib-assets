@@ -1,0 +1,20 @@
+[project]
+name = "lifelib-assets"
+version = "0.0.0"
+description = "Asset models for lifelib: a modelx bond portfolio model transcribed from quantlib-migration (pureql)"
+requires-python = ">=3.13"
+dependencies = ["modelx>=0.33", "numpy", "pandas"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-m 'not slow and not perf and not compiled'"
+markers = [
+    "oracle: compares with the QuantLib 1.41 SWIG binding (test dependency only)",
+    "slow: long-running (full sweeps, large portfolios)",
+    "compiled: needs the modelx-cython build in build/ (python tools/build_cy.py)",
+    "perf: performance measurements",
+]
+filterwarnings = [
+    "error::RuntimeWarning",
+]

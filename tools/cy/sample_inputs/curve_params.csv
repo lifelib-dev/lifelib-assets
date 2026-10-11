@@ -1,0 +1,9 @@
+scen_id,t,curve_type,day_counter,compounding,frequency,extrapolate,flat_rate,spread_compounding,spread_frequency
+1,0,FlatForward,Actual365Fixed,Continuous,Annual,0,0.03,,
+1,1,ZeroCurve,Actual360,Simple,,0,,Compounded,Annual
+1,2,ZeroCurve,Thirty360.BondBasis,Compounded,Semiannual,1,,SimpleThenCompounded,Quarterly
+1,3,FlatForward,Thirty360.USA,SimpleThenCompounded,Annual,0,0.0325,CompoundedThenSimple,Semiannual
+2,0,ZeroCurve,Actual365Fixed,Continuous,Annual,0,,Simple,
+2,1,FlatForward,Actual360,CompoundedThenSimple,Quarterly,1,0.0275,Continuous,
+2,2,ZeroCurve,Thirty360.European,SimpleThenCompounded,Annual,1,,Compounded,Monthly
+2,3,ZeroCurve,Actual365Fixed,CompoundedThenSimple,Semiannual,0,,,
