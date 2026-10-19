@@ -557,7 +557,7 @@ def stepwise_time(is_coupon, d, acc_start, ref_start, ref_end, dc, npv_date, las
     """``getStepwiseDiscountTime``: the time of ONE discounting step, from ``last_date`` to the flow dated ``d``.
 
     The flow is a coupon (``is_coupon`` 1, with accrual start ``acc_start``
-    and reference period ``ref_start``..``ref_end``) or not (0: a redemption,
+    and reference period ``ref_start..ref_end``) or not (0: a redemption,
     whose reference period is invented). Three branches, in upstream's order:
 
     * a coupon whose accrual start is not ``last_date``: the difference of

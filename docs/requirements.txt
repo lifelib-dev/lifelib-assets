@@ -1,0 +1,8 @@
+# Packages needed to build the documentation (make html).
+# numpy and pandas: reading the model with modelx imports them (its np and pd References).
+sphinx>=8
+myst-parser>=5.1
+pydata-sphinx-theme>=0.15
+modelx>=0.33
+numpy
+pandas

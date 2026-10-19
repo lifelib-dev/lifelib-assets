@@ -1,5 +1,7 @@
 """Benchmark ``bond_portfolio/run.py`` on a generated portfolio, and record the results.
 
+Usage::
+
     python tools/bench.py [--n-bonds 10000] [--n-scen 2] [--n-times 121] [--step 1M] [--seed 1]
                           [--modes export,compiled] [--scen LIST] [--times LIST]
                           [--output-level 1|2|3] [--solver-errors raise|nan]

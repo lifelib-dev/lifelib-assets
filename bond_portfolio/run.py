@@ -1,5 +1,7 @@
 """Run the BondPortfolio model on a directory of inputs and write its outputs.
 
+Usage::
+
     python bond_portfolio/run.py --inputs DIR --out DIR [--mode modelx|export|compiled]
                                  [--scen LIST] [--times LIST]
                                  [--output-level 1|2|3] [--solver-errors raise|nan]

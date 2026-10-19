@@ -328,7 +328,7 @@ def check_limits():
 
     * N <= ``MAX_BONDS`` (the bond index ``b``) and P <= ``MAX_FLOWS`` (the
       flow index ``p``); at most ``MAX_SCHED`` flows per bond;
-    * settlement days in 0..``MAX_SETTLE_DAYS`` and calendar codes below
+    * settlement days in ``0..MAX_SETTLE_DAYS`` and calendar codes below
       ``CAL_MAX`` (``settle_cal(cal, nsd)``);
     * T <= ``MAX_T`` (the projection period ``per`` runs 0..T) and
       S <= ``MAX_SCEN``;
