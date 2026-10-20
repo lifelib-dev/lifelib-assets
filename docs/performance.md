@@ -177,8 +177,9 @@ Measured on 2026-10-11 with the modelx-cython branch `bondportfolio/mx2cy-improv
 | **P5 + both** | the branch | `--directive infer_types=True --use-libm` |
 
 ```
-# PowerShell, per build (MODELX_CYTHON_SRC: a checkout of the branch; unset for main)
-$env:MODELX_CYTHON_SRC = 'C:/Users/fumito/.cache/lifelib-assets/modelx-cython-wt'
+# PowerShell, per build. MODELX_CYTHON_SRC points at a checkout of the branch; leave it
+# unset when the installed modelx-cython is already that branch.
+$env:MODELX_CYTHON_SRC = 'C:/path/to/modelx-cython'   # on branch bondportfolio/mx2cy-improvements
 $env:BONDPORTFOLIO_BUILD = 'C:/Users/fumito/.cache/lifelib-assets/build_both'
 python -B tools/build_cy.py --directive infer_types=True --use-libm
 python -B -m pytest -m compiled                    # compiled == export, bitwise
