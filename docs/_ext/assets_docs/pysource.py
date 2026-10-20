@@ -48,6 +48,7 @@ class Module:
     constants: dict  # name -> line
     values: dict  # name -> source text of the value
     comments: dict  # name -> its "#:" doc comment
+    digest: str  # of the source file
 
     @property
     def role_targets(self):
@@ -312,21 +313,31 @@ def parse_module(path, repo_root, modname):
         constants=constants,
         values=values,
         comments=comments,
+        digest=r.digest(source),
     )
 
 
-def linemap(mod):
-    """{object name: (path, line)} of a module, members as ``Class.member``."""
-    out = {}
-    for f in mod.funcs:
-        out[f.name] = (mod.path, f.line)
-        for m in f.methods:
-            out[f"{f.name}.{m.name}"] = (mod.path, m.line)
-        for name, _, _, line in f.attrs:
-            out[f"{f.name}.{name}"] = (mod.path, line)
-    for name, line in mod.constants.items():
-        out.setdefault(name, (mod.path, line))
-    return out
+def viewcode_tags(tree):
+    """{name: (type, first line, last line)} of a module's definitions, as
+    sphinx.ext.viewcode wants them; members are ``Class.member``."""
+    tags = {}
+
+    def add(prefix, body):
+        for node in body:
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                start = min([d.lineno for d in node.decorator_list] + [node.lineno])
+                kind = "class" if isinstance(node, ast.ClassDef) else "def"
+                tags[prefix + node.name] = (kind, start, node.end_lineno)
+                if kind == "class":
+                    add(f"{prefix}{node.name}.", node.body)
+            elif isinstance(node, (ast.Assign, ast.AnnAssign)):
+                targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+                for t in targets:
+                    if isinstance(t, ast.Name):
+                        tags.setdefault(prefix + t.id, ("other", node.lineno, node.end_lineno))
+
+    add("", tree.body)
+    return tags
 
 
 # -- rendering -------------------------------------------------------------
@@ -410,19 +421,41 @@ def _constants_section(mod, names, level):
     return f"{'#' * level} Constants\n\n" + r.eval_rst("\n".join(blocks))
 
 
-def module_body(mod, source_url, level, documented_helpers_only, referenced=frozenset()):
+def module_body(mod, source_url, source_page, level, documented_helpers_only,
+                referenced=frozenset()):
     """The page text of one module, its sections at heading ``level``.
 
-    Helpers without a docstring are shown unless ``documented_helpers_only``.
-    The helpers and module constants that docstrings cross-reference (named
-    in ``referenced``, see :attr:`Module.role_targets`) are always shown, and
-    so are the constants with a ``#:`` doc comment.
+    Helpers without a docstring are shown unless ``documented_helpers_only``,
+    or unless the module would show nothing else. The helpers and module
+    constants that docstrings cross-reference (named in ``referenced``, see
+    :attr:`Module.role_targets`) are always shown, and so are the constants
+    with a ``#:`` doc comment.
+
+    The Source row links to the module's highlighted source in the docs
+    (``source_page``), which sphinx.ext.viewcode writes only for a module
+    with documented objects; otherwise it links to the file (``source_url``).
     """
     def is_ref(name):
         full = f"{mod.modname}.{name}"
         return any(full == t or full.endswith("." + t) for t in referenced)
 
-    facts = [("Source", r.link(mod.path, source_url(mod.path, None)))]
+    fixtures = [f for f in mod.funcs if f.kind == "fixture"]
+    tests_ = [f for f in mod.funcs if f.kind == "test"]
+    helpers = [f for f in mod.funcs if f.kind == "helper" and (
+        is_ref(f.name) or not f.name.startswith("_")
+        and (f.doc or not documented_helpers_only))]
+    funcs = {f.name for f in mod.funcs}
+    constants = [n for n in mod.constants if n not in funcs and n != "pytestmark"
+                 and (is_ref(n) or n in mod.comments)]
+    if not (fixtures or tests_ or helpers or constants):
+        # nothing documented: show the public functions, undocumented as they are
+        helpers = [f for f in mod.funcs if f.kind == "helper" and not f.name.startswith("_")]
+
+    if fixtures or tests_ or helpers or constants:
+        source = r.link(mod.path, source_page(mod.modname))
+    else:
+        source = r.link(mod.path, source_url(mod.path, None))
+    facts = [("Source", source)]
     tests = mod.tests
     if tests:
         facts.append(("Tests", str(len(tests))))
@@ -458,19 +491,11 @@ def module_body(mod, source_url, level, documented_helpers_only, referenced=froz
         out.append(r.eval_rst(r.list_table(["Option", "Help", "Notes"], rows,
                                            widths=[30, 45, 25])))
 
-    fixtures = [f for f in mod.funcs if f.kind == "fixture"]
-    tests_ = [f for f in mod.funcs if f.kind == "test"]
-    helpers = [f for f in mod.funcs if f.kind == "helper" and (
-        is_ref(f.name) or not f.name.startswith("_")
-        and (f.doc or not documented_helpers_only))]
     out.append(_section("Fixtures", fixtures, level, mod.marks))
     out.append(_section("Tests", tests_, level, mod.marks))
     out.append(_section("Functions" if not tests_ and not fixtures else "Helpers",
                         helpers, level, mod.marks))
-    funcs = {f.name for f in mod.funcs}
-    out.append(_constants_section(
-        mod, [n for n in mod.constants if n not in funcs and n != "pytestmark"
-              and (is_ref(n) or n in mod.comments)], level))
+    out.append(_constants_section(mod, constants, level))
     # last, so that the module target stays at the heading
-    out.append(r.lines_note(linemap(mod)))
+    out.append(r.source_note(mod.digest))
     return "\n".join(s for s in out if s)

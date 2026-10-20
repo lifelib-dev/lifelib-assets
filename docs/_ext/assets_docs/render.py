@@ -4,6 +4,7 @@ Docstrings in this project are reStructuredText, so generated pages wrap
 them, and every table that holds docstring text, in ``{eval-rst}`` blocks.
 """
 
+import hashlib
 import inspect
 import re
 from pathlib import Path
@@ -25,14 +26,19 @@ def generated_note(sources):
     )
 
 
-def lines_note(linemap):
-    """A comment holding the source lines of a page's objects.
+def digest(data):
+    """A digest of the bytes of a source file."""
+    return hashlib.sha1(data).hexdigest()
 
-    sphinx.ext.linkcode puts the lines into the [source] links when a page is
-    read; with them in the text, a change of lines alone re-reads the page.
+
+def source_note(digest_text):
+    """A comment holding the digest of the source a page documents.
+
+    sphinx.ext.viewcode keeps the source of a module from the last time a page
+    documenting it was read. With the digest in the text, any change to the
+    source re-reads the page, and so refreshes the highlighted source.
     """
-    return "<!-- source lines: " + " ".join(
-        f"{name}:{line}" for name, (_, line) in linemap.items()) + " -->\n"
+    return f"<!-- source digest: {digest_text} -->\n"
 
 
 def eval_rst(text):

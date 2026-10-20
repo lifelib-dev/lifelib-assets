@@ -8,10 +8,12 @@
 * It rewrites the relative links of the repository's Markdown files, which the
   hand-written pages ``{include}``, so that they work in the docs (see
   :mod:`.links`).
-* :func:`linkcode_resolve` gives :mod:`sphinx.ext.linkcode` the GitHub URL of
-  the source lines of every documented object.
+* It gives :mod:`sphinx.ext.viewcode` the source of every documented module,
+  read from the file rather than imported, so that each entry links to its
+  highlighted source in the docs.
 """
 
+import ast
 from pathlib import Path
 
 from sphinx.errors import ConfigError
@@ -25,12 +27,14 @@ logger = logging.getLogger(__name__)
 
 _state = {
     "rewriter": None,
-    "linemap": {},  # module name -> {object name: (repo path, line)}
+    "sources": {},  # module name -> source file
+    "viewcode": {},  # module name -> (code, tags), read once per build
     "config": None,
 }
 
 
 def _source_url(rel_path, line):
+    """The file on GitHub, for files that have no page in the docs."""
     cfg = _state["config"]
     if not cfg.assets_github_url:
         return None
@@ -38,17 +42,18 @@ def _source_url(rel_path, line):
     return f"{url}#L{line}" if line else url
 
 
-def linkcode_resolve(domain, info):
-    """The GitHub URL of a documented Python object, for sphinx.ext.linkcode."""
-    if domain != "py" or _state["config"] is None:
-        return None
-    entry = _state["linemap"].get(info.get("module"), {}).get(info.get("fullname"))
-    return _source_url(*entry) if entry else None
+def _source_page(modname):
+    """The link from a generated page to viewcode's page of ``modname``.
+
+    The generated pages sit one directory below ``assets_generated_dir``.
+    """
+    depth = len(Path(_state["config"].assets_generated_dir).parts) + 1
+    return "../" * depth + "_modules/" + modname.replace(".", "/") + ".html"
 
 
 def _generate(app):
     cfg = app.config
-    _state["config"] = cfg
+    _state.update(config=cfg, sources={}, viewcode={})
     srcdir = Path(app.srcdir).resolve()
     repo_root = (srcdir / cfg.assets_repo_root).resolve()
     out_dir = (srcdir / cfg.assets_generated_dir).resolve()
@@ -58,13 +63,13 @@ def _generate(app):
     pages = {}
 
     try:
-        mdoc = model.ModelDoc(repo_root, cfg.assets_model_dir, _source_url)
+        mdoc = model.ModelDoc(repo_root, cfg.assets_model_dir, _source_url, _source_page)
         pages.update({f"model/{k}": v for k, v in mdoc.generate().items()})
-        _state["linemap"].update(mdoc.linemap)
+        _state["sources"].update(mdoc.sources)
     except Exception as exc:  # modelx or a model dependency missing, or a bad model
         logger.warning(f"[assets_docs] model reference not generated: {exc!r}")
 
-    sdoc = suite.SuiteDoc(repo_root, _source_url, logger)
+    sdoc = suite.SuiteDoc(repo_root, _source_url, _source_page, logger)
     pages.update({f"tests/{k}": v for k, v in sdoc.tests_pages().items()})
     scripts = sdoc.parse_scripts(cfg.assets_model_scripts, "bond_portfolio")
     for mod in scripts:
@@ -73,7 +78,7 @@ def _generate(app):
     pages["_fragments/demo_inputs.md"] = sdoc.csv_fragment(
         Path(cfg.assets_model_dir).parent.as_posix())
     for _, mod in sdoc.modules:
-        _state["linemap"][mod.modname] = ps.linemap(mod)
+        _state["sources"][mod.modname] = repo_root / mod.path
 
     r.write_pages(out_dir, pages, logger)
 
@@ -82,6 +87,27 @@ def _generate(app):
         links.included_files(srcdir, skip_dirs=(Path(cfg.assets_generated_dir).parts[0],)),
         cfg.assets_github_url, cfg.assets_github_branch,
     )
+
+
+def _on_viewcode_find_source(app, modname):
+    """(code, tags) of a documented module, for sphinx.ext.viewcode.
+
+    The model files are modelx's pseudo-Python and the tests import pureql,
+    so the source is read and parsed, never imported.
+    """
+    path = _state["sources"].get(modname)
+    if path is None:
+        return None
+    if modname not in _state["viewcode"]:
+        source = path.read_bytes()
+        code = ps.source_text(source).replace("\r\n", "\n").replace("\r", "\n")
+        _state["viewcode"][modname] = (code, ps.viewcode_tags(ast.parse(source)))
+    return _state["viewcode"][modname]
+
+
+def _on_viewcode_follow_imported(app, modname, fullname):
+    """Our modules define what they document; viewcode need not import them."""
+    return modname if modname in _state["sources"] else None
 
 
 def _is_generated(app, docname):
@@ -105,6 +131,7 @@ def _on_include_read(app, relative_path, parent_docname, content):
 
 
 def setup(app):
+    app.setup_extension("sphinx.ext.viewcode")
     app.add_config_value("assets_repo_root", "..", "env")
     app.add_config_value("assets_github_url", "", "env")
     app.add_config_value("assets_github_branch", "main", "env")
@@ -115,4 +142,6 @@ def setup(app):
     app.connect("builder-inited", _generate)
     app.connect("source-read", _on_source_read)
     app.connect("include-read", _on_include_read)
+    app.connect("viewcode-find-source", _on_viewcode_find_source)
+    app.connect("viewcode-follow-imported", _on_viewcode_follow_imported)
     return {"version": "1.0", "parallel_read_safe": True, "parallel_write_safe": True}

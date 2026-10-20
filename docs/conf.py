@@ -10,15 +10,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "_ext"))
 
-from assets_docs import linkcode_resolve  # noqa: E402, F401
-
 project = "lifelib-assets"
 author = "lifelib Developers"
 copyright = "2026, lifelib Developers"
 
 extensions = [
     "myst_parser",
-    "sphinx.ext.linkcode",
+    "sphinx.ext.viewcode",  # [source] links to the highlighted source in the docs
     "assets_docs",
 ]
 

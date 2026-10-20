@@ -3,8 +3,8 @@
 The model is read with ``modelx.read_model``, so the pages show the model as
 modelx sees it: the Spaces and their parameters, the Cells in definition
 order with their parameters and whether they are cached, and the References.
-The signatures and line numbers come from the model's source files, parsed
-with :mod:`ast`.
+The signatures come from the model's source files, parsed with :mod:`ast`,
+and sphinx.ext.viewcode shows the files themselves, linked from every entry.
 """
 
 import ast
@@ -78,12 +78,13 @@ def _space_rows(space, model_name):
 class ModelDoc:
     """Builds the pages of the model reference."""
 
-    def __init__(self, repo_root, model_dir, source_url):
+    def __init__(self, repo_root, model_dir, source_url, source_page):
         self.repo_root = repo_root
         self.model_dir = repo_root / model_dir
         self.model_rel = self.model_dir.relative_to(repo_root).as_posix()
-        self.source_url = source_url  # (repo-relative path, line) -> URL or None
-        self.linemap = {}  # module name -> {object name: (repo-relative path, line)}
+        self.source_url = source_url  # (repo-relative path, line) -> GitHub URL or None
+        self.source_page = source_page  # module name -> link to its highlighted source
+        self.sources = {}  # module name -> source file, for sphinx.ext.viewcode
 
     def _src(self, path):
         return path.relative_to(self.repo_root).as_posix()
@@ -119,8 +120,6 @@ class ModelDoc:
 
     def _index(self, model, spaces, mx_version):
         init = self.model_dir / "__init__.py"
-        index = _source_index(init)
-        self.linemap[model.name] = {n: (self._src(init), line) for n, (_, line) in index.items()}
         src = self._src(init)
         out = [r.generated_note([self.model_rel]), f"# {model.name} model reference\n"]
         out.append(INTRO.format(model_dir=self.model_rel, mx_version=mx_version))
@@ -166,7 +165,7 @@ class ModelDoc:
         file = self.model_dir.joinpath(*_page_name(space, model_name).split(".")) / "__init__.py"
         src = self._src(file)
         index = _source_index(file)
-        self.linemap[space.fullname] = {n: (src, line) for n, (_, line) in index.items()}
+        self.sources[space.fullname] = file
 
         cells = list(space.cells.values())
         uncached = [c for c in cells if not c.is_cached]
@@ -185,14 +184,15 @@ class ModelDoc:
             ("Parameters", params_text),
             ("Cells", f"{len(cells)} ({len(uncached)} not cached)"),
             ("References", ", ".join(r.literal(n) for n in refs) or "none"),
-            ("Source", r.link(src, self.source_url(src, None))),
+            ("Source", r.link(src, self.source_page(space.fullname))),
         ]
         if space.spaces:
             facts.insert(3, ("Spaces", ", ".join(
                 f":py:mod:`~{s.fullname}`" for s in space.spaces.values())))
 
         title = f"{page}[{', '.join(params)}]" if params else page
-        out = [r.generated_note([src]), r.lines_note(index), f"# {title}\n"]
+        out = [r.generated_note([src]), r.source_note(r.digest(file.read_bytes())),
+               f"# {title}\n"]
         out.append(r.eval_rst(f".. py:module:: {space.fullname}\n\n" + r.field_table(facts)))
         if space.doc:
             out.append(r.eval_rst(r.clean(space.doc)))

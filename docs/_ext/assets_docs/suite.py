@@ -74,11 +74,12 @@ def _markers(repo_root):
 
 
 class SuiteDoc:
-    def __init__(self, repo_root, source_url, logger=None):
+    def __init__(self, repo_root, source_url, source_page, logger=None):
         self.repo_root = repo_root
-        self.source_url = source_url
+        self.source_url = source_url  # (repo-relative path, line) -> GitHub URL or None
+        self.source_page = source_page  # module name -> link to its highlighted source
         self.logger = logger
-        self.modules = []  # (family, Module) of every parsed file, for the line map
+        self.modules = []  # (family, Module) of every parsed file, for sphinx.ext.viewcode
 
     # -- tests -------------------------------------------------------------
 
@@ -136,7 +137,8 @@ class SuiteDoc:
 
         for mod in groups.get("", []):
             out.append(f"## Shared fixtures: `{mod.path}`\n")
-            out.append(ps.module_body(mod, self.source_url, 3, documented_helpers_only=False,
+            out.append(ps.module_body(mod, self.source_url, self.source_page, 3,
+                                      documented_helpers_only=False,
                                       referenced=self.referenced))
 
         data_dir = self.repo_root / "tests" / "data"
@@ -181,7 +183,8 @@ class SuiteDoc:
             ["Module", "Tests", "Markers", "Summary"], rows, widths=[22, 7, 14, 57])))
         for m in mods:
             out.append(f"## {m.path.rsplit('/', 1)[1]}\n")
-            out.append(ps.module_body(m, self.source_url, 3, documented_helpers_only=m.tests != [],
+            out.append(ps.module_body(m, self.source_url, self.source_page, 3,
+                                      documented_helpers_only=m.tests != [],
                                       referenced=self.referenced))
         return "\n".join(out)
 
@@ -202,8 +205,8 @@ class SuiteDoc:
         """The page of one script; ``family_mods`` are the scripts of its family."""
         referenced = set().union(*(m.role_targets for m in family_mods))
         out = [r.generated_note([mod.path]), f"# {mod.path}\n"]
-        out.append(ps.module_body(mod, self.source_url, 2, documented_helpers_only=True,
-                                  referenced=referenced))
+        out.append(ps.module_body(mod, self.source_url, self.source_page, 2,
+                                  documented_helpers_only=True, referenced=referenced))
         return "\n".join(out)
 
     def tools_pages(self):
