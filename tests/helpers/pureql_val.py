@@ -815,11 +815,13 @@ def golden_mismatches(model, values, policy=NT_ENGINE, label=""):
 
 # --------------------------------------------------------------------------- Phase 3 fuzz portfolios
 #: The generate_inputs.py portfolios of the future-t fuzz (name -> generate() arguments):
+#:
 #: * ``long``: 60 valuation dates 400 days apart from 2000-01-03 to 2064, so
 #:   that every generated bond (effective dates 2000..2030, up to 30Y 11M) is
 #:   seen before issue, alive and after maturity, on every weekday;
 #: * ``dense``: 90 dates 4 days apart from 2019-12-27, which lands on coupon
 #:   and maturity dates, on the days around them, and on weekends.
+#:
 #: Both curve types (70% ZeroCurve), extrapolation on and off, random curve
 #: and spread conventions, ~70% of the bonds with a spread.
 FUZZ_SETS = {

@@ -1,0 +1,9 @@
+/* Tables of facts at the top of generated pages. */
+table.assets-facts th.stub {
+  white-space: nowrap;
+}
+/* Keep wide reference tables readable. */
+.bd-article table.docutils td,
+.bd-article table.docutils th {
+  vertical-align: top;
+}

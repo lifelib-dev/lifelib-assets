@@ -6,3 +6,5 @@ build/
 outputs/
 *_BAK[0-9]*/
 *.egg-info/
+docs/_build/
+docs/reference/

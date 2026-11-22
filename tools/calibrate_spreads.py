@@ -1,5 +1,7 @@
 """Calibrate z-spreads at t = 0 with the MODEL, and write an input set that feeds them forward.
 
+Usage::
+
     python tools/calibrate_spreads.py --inputs DIR --out DIR [--mode modelx|export|compiled] [--scen K]
 
 DECISIONS.md D-4: spreads are calibrated at t = 0 by the model itself, never by
@@ -179,7 +181,7 @@ def write_input_set(m, inputs, out, spreads):
 
 
 def verify(mode, out, spreads):
-    """The largest |engine clean price - quoted clean price| at t = 0 of the calibrated bonds, after the bitwise checks."""
+    """The largest ``|engine clean price - quoted clean price|`` at t = 0 of the calibrated bonds, after the bitwise checks."""
     m, unwrap, close = _new_model(mode, out)
     try:
         try:

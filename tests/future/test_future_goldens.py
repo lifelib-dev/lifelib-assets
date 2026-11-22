@@ -8,13 +8,13 @@ The quantlib-migration README headline bond (a 10Y semiannual 4%
 at v = 16-Sep-2020 (Wednesday; settlement T+3 = Mon 21-Sep-2020) on
 ``FlatForward(v, 3.5%, Actual365Fixed)`` (Continuous):
 
-=====================================  ==========================
+====================================== ==========================
 NPV                                    ``102.13530449214969``
 settlementValue = dirty price          ``102.18428521477128``
 clean price                            ``102.11761854810462``
 accrued amount                         ``0.06666666666665932``
 clean price at z = 1.25% (Comp., Ann.) ``96.67131290103727``
-=====================================  ==========================
+====================================== ==========================
 
 and, at t = 0, the README's own literals (16-Sep-2015, flat 3%): NPV
 ``108.36776235612268``, clean ``108.34563953853349``.

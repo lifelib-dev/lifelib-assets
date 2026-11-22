@@ -1,5 +1,7 @@
 """Export the model and compile it with modelx-cython.
 
+Usage::
+
     python tools/build_cy.py [--translate-only] [--skip-export]
                              [--directive NAME=VALUE ...] [--use-libm]
 
@@ -55,9 +57,9 @@ from buildpaths import build_dir, EXPORT_NAME  # noqa: E402
 BUILD = build_dir()
 SAMPLE = ROOT / "tools" / "cy" / "sample.py"
 
-# Space -> {integer-parameter tuple: model Reference names giving the sizes}.
-# A size of n admits arguments in range(n). tests/lint checks completeness
-# against the generated .pxd files.
+#: Space -> {integer-parameter tuple: model Reference names giving the sizes}.
+#: A size of n admits arguments in range(n). tests/lint checks completeness
+#: against the generated .pxd files.
 SPEC_MAP = {
     "Dates": {
         ("d",): ("MAX_SERIAL+1",),
@@ -80,10 +82,10 @@ SPEC_MAP = {
     },
 }
 
-# Cached Cells that legitimately return Python objects (DataFrames, tuples,
-# dicts, lists). Every OTHER cached Cells must come out of mx2cy with C types
-# for its return and its parameters; audit_pxd() fails the build otherwise (a
-# silent demotion, e.g. from a float/np.float64 mix in the sample trace).
+#: Cached Cells that legitimately return Python objects (DataFrames, tuples,
+#: dicts, lists). Every OTHER cached Cells must come out of mx2cy with C types
+#: for its return and its parameters; audit_pxd() fails the build otherwise (a
+#: silent demotion, e.g. from a float/np.float64 mix in the sample trace).
 OBJECT_CELLS = {
     "Data": {
         "bond_table", "coupon_rate_table", "val_date_table", "curve_param_table",
@@ -101,11 +103,11 @@ OBJECT_CELLS = {
     "Valuation": {"result_frame"},
 }
 
-# Uncached Cells that may stay ``object`` in the generated .pxd, with the
-# reason. mx2cy types an uncached Cells from the calls the sample run makes to
-# it, directly or nested in other Cells (tools/cy/sample.py); one it never sees
-# keeps ``object`` parameters and return. Every OTHER uncached Cells must come
-# out with C types (or ``str``), like the cached ones.
+#: Uncached Cells that may stay ``object`` in the generated .pxd, with the
+#: reason. mx2cy types an uncached Cells from the calls the sample run makes to
+#: it, directly or nested in other Cells (tools/cy/sample.py); one it never sees
+#: keeps ``object`` parameters and return. Every OTHER uncached Cells must come
+#: out with C types (or ``str``), like the cached ones.
 UNCACHED_OBJECT_CELLS = {
     "Data": {
         "read_table": "returns a DataFrame (reads one input CSV file)",
